@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/byungil712/dashWeather",
+  "homepage": "https://github.com/byungil712/dash2",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
