@@ -1,30 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { forecastList, weatherList } from "../Script/slice";
+import { weatherList } from "../Script/slice";
 
-const WeatherBox = ({ cities }) => {
+const WeatherBox = ({ cities, getCurrentLocation, handleCityChange }) => {
    const dispatch = useDispatch();
    const { weather, forecast, loading, error } = useSelector(
       (state) => state.weather,
    );
+
    const scrollRef = useRef(null);
    const [isDragging, setIsDragging] = useState(false);
    const [startX, setStartX] = useState(0);
    const [scrollLeft, setScrollLeft] = useState(0);
-
-   const getCurrentLocation = () => {
-      navigator.geolocation.getCurrentPosition(
-         (position) => {
-            const lat = position.coords.latitude;
-            const lon = position.coords.longitude;
-            dispatch(weatherList({ lat, lon }));
-            dispatch(forecastList({ lat, lon }));
-         },
-         (error) => {
-            console.error("위치 정보 오류:", error);
-         },
-      );
-   };
 
    useEffect(() => getCurrentLocation(), []);
 
@@ -32,8 +19,7 @@ const WeatherBox = ({ cities }) => {
       dispatch(weatherList());
    }, [dispatch]);
 
-   console.log(weather);
-
+   /* 가로 스크롤 */
    const handleMouseDown = (e) => {
       setIsDragging(true);
       setStartX(e.pageX - scrollRef.current.offsetLeft);
@@ -54,13 +40,23 @@ const WeatherBox = ({ cities }) => {
 
    return (
       <>
+         {/* 도시 선택 */}
          <div className="city_selector">
+            <button type="button" onClick={() => handleCityChange("current")}>
+               현재위치
+            </button>
             {cities.map((city, idx) => (
-               <button type="button" key={idx}>
+               <button
+                  type="button"
+                  key={idx}
+                  onClick={() => handleCityChange(city)}
+               >
                   {city}
                </button>
             ))}
          </div>
+
+         {/* 시간대별 날씨 */}
          <div className="time_weather">
             <h2>시간대별 날씨 정보</h2>
             <div
@@ -75,21 +71,25 @@ const WeatherBox = ({ cities }) => {
                {forecast?.list?.slice(0, 8).map((item, idx) => (
                   <div key={idx} className="time">
                      <p>
-                        <strong>
-                           {new Date(item.dt * 1000).toLocaleString("KR")}
-                        </strong>
+                        {new Date(item.dt * 1000).toLocaleString("ko-KR", {
+                           month: "numeric",
+                           day: "numeric",
+                           hour: "2-digit",
+                           minute: "2-digit",
+                           hour12: false,
+                        })}
                      </p>
                      <img
                         src={`https://openweathermap.org/img/wn/${item.weather[0].icon}.png`}
                         alt="/"
                      />
-                     <p>온도: {item.main.temp}°C</p>
-                     <p>최고온도: {item.main.temp_max}°C</p>
-                     <p>최저온도: {item.main.temp_min}°C</p>
+                     <p>{item.main.temp}°C</p>
                   </div>
                ))}
             </div>
          </div>
+
+         {/* 날씨 정보 */}
          <div className="weather_info">
             <div className="info_lf">
                <div className="title">

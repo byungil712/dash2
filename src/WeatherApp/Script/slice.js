@@ -13,7 +13,7 @@ export const weatherList = createAsyncThunk(
    async ({ lat, lon }) => {
       try {
          const response = await axios.get(
-            `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=3e49bc4bf796f7c6fe699cfdc673306a&units=metric`,
+            `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=3e49bc4bf796f7c6fe699cfdc673306a&units=metric&lang=kr`,
          );
          return response.data;
       } catch (error) {
@@ -27,12 +27,28 @@ export const forecastList = createAsyncThunk(
    async ({ lat, lon }) => {
       try {
          const response = await axios.get(
-            `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=3e49bc4bf796f7c6fe699cfdc673306a&units=metric`,
+            `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=3e49bc4bf796f7c6fe699cfdc673306a&units=metric&lang=kr`,
          );
          return response.data;
       } catch (error) {
          console.error("시간대별 날씨 에러");
       }
+   },
+);
+
+export const getWeatherByCity = createAsyncThunk(
+   "weather/fetchByCity",
+   async (city) => {
+      const weatherResponse = await axios.get(
+         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=3e49bc4bf796f7c6fe699cfdc673306a&units=metric&lang=kr`,
+      );
+      const forecastResponse = await axios.get(
+         `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=3e49bc4bf796f7c6fe699cfdc673306a&units=metric&lang=kr`,
+      );
+      return {
+         weather: weatherResponse.data,
+         forecast: forecastResponse.data,
+      };
    },
 );
 
@@ -65,6 +81,22 @@ const weatherSlice = createSlice({
             state.forecast = action.payload;
          })
          .addCase(forecastList.rejected, (state, action) => {
+            state.loading = false;
+            state.error = action.error.message;
+         })
+
+         /////
+
+         .addCase(getWeatherByCity.pending, (state) => {
+            state.loading = true;
+            state.error = null;
+         })
+         .addCase(getWeatherByCity.fulfilled, (state, action) => {
+            state.loading = false;
+            state.weather = action.payload.weather;
+            state.forecast = action.payload.forecast;
+         })
+         .addCase(getWeatherByCity.rejected, (state, action) => {
             state.loading = false;
             state.error = action.error.message;
          });

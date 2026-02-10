@@ -1,3 +1,5 @@
+@import "leaflet/dist/leaflet.css";
+
 * {
    padding: 0;
    margin: 0;
@@ -24,6 +26,16 @@ img {
 
 .icon {
    color: #fff;
+}
+
+.leaflet-container {
+   height: 400px;
+   width: 100%;
+   z-index: 1;
+}
+
+.leaflet-tile-container {
+   pointer-events: auto;
 }
 
 body {
@@ -53,6 +65,7 @@ body {
 .dash .menu {
    margin: 0 auto;
    margin-top: 104px;
+   padding: 0 16px;
 }
 
 .dash .menu ul {
@@ -61,7 +74,7 @@ body {
    gap: 24px;
 }
 
-.dash .menu ul li{
+.dash .menu ul li {
    display: flex;
    align-items: center;
    font-size: 16px;
@@ -83,12 +96,14 @@ body {
    background-color: #fff;
    border-radius: 16px;
    padding: 16px;
+   display: flex;
+   justify-content: space-between;
+   gap: 16px;
 }
 
 .dash > .dash_i input {
    width: 100%;
    height: 61px;
-   max-width: 541px;
    padding: 16px;
    background-color: #ededed;
    font-size: 14px;
@@ -102,15 +117,16 @@ body {
 }
 
 .dash > .dash_i > .dash_lf {
+   width: 100%;
+   max-width: 541px;
+   min-width: 0;
    display: flex;
    flex-direction: column;
    gap: 16px;
 }
 
 .dash > .dash_i > .dash_lf > .city_selector {
-   width: 100%;
    height: 78px;
-   max-width: 541px;
    background-color: #ededed;
    padding: 16px;
    display: flex;
@@ -119,9 +135,11 @@ body {
 }
 
 .dash > .dash_i > .dash_lf > .city_selector > button {
+   width: 100%;
+   max-width: 80px;
    background-color: #d5d5d5;
    border: none;
-   padding: 6px 12px;
+   padding: 6px 0;
    font-size: 14px;
    font-weight: 700;
    border-radius: 8px;
@@ -129,8 +147,6 @@ body {
 }
 
 .dash > .dash_i > .dash_lf > .time_weather {
-   width: 100%;
-   max-width: 541px;
    background-color: #ededed;
    border-radius: 16px;
 }
@@ -154,33 +170,28 @@ body {
 }
 
 .dash > .dash_i > .dash_lf > .time_weather > .times > .time {
-   width: 100%;
-   height: 100%;
    max-width: 138px;
-   max-height: 153px;
+   height: 153px;
    display: flex;
    flex-direction: column;
-   flex-wrap: nowrap;
+   align-items: center;
    background-color: #d5d5d5;
    border-radius: 16px;
-   gap: 8px;
+   padding: 16px;
 }
 
-.dash_lf > .time_weather > .times > .time > p{
+.dash_lf > .time_weather > .times > .time > p {
    font-size: 14px;
-   margin: auto;
+   font-weight: 700;
 }
 
-.dash_lf > .time_weather > .times > .time > img{
-   width: 54px;
-   height: 54px;
-   margin: auto;
+.dash_lf > .time_weather > .times > .time > img {
+   width: 80px;
+   height: 80px;
 }
 
-.dash_lf > .weather_info{
-   width: 100%;
+.dash_lf > .weather_info {
    height: 100%;
-   max-width: 541px;
    max-height: 291px;
    background-color: #ededed;
    display: flex;
@@ -190,32 +201,110 @@ body {
    border-radius: 16px;
 }
 
-.dash_lf > .weather_info > .info_lf{
+.dash_lf > .weather_info > .info_lf {
    display: flex;
    flex-direction: column;
    gap: 40px;
 }
 
-.dash_lf > .weather_info > .info_lf h3{
+.dash_lf > .weather_info > .info_lf h3 {
    font-size: 32px;
    font-weight: 700;
 }
 
-.dash_lf > .weather_info > .info_lf > .info{
+.dash_lf > .weather_info > .info_lf > .info {
    display: flex;
    flex-direction: column;
    gap: 8px;
    font-weight: 700;
 }
 
-.dash_lf > .weather_info > .info_lf > .info > p{
-   font-size: 16px;
+.dash_lf > .weather_info > .info_lf > .info > p {
+   font-size: 14px;
 }
 
-.dash_lf > .weather_info > .info_lf > .info > p:first-child{
+.dash_lf > .weather_info > .info_lf > .info > p:first-child {
    font-size: 24px;
 }
 
-.dash_lf > .weather_info > .info_rt > .weather_img{
+.dash_rt {
+   width: 100%;
+   max-width: 416px;
+   display: flex;
+   flex-direction: column;
+   gap: 16px;
+}
 
+.dash_rt > .weekly_weather {
+   width: 100%;
+   height: 100%;
+   max-width: 416px;
+   max-height: 387px;
+   background-color: #ededed;
+   border-radius: 16px;
+   padding: 16px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.dash_rt > .weekly_weather h3 {
+   font-size: 16px;
+   margin-bottom: 16px;
+}
+
+.dash_rt > .weekly_weather > .weekly_info {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   gap: 8px;
+   overflow-y: hidden;
+   white-space: nowrap;
+   user-select: none;
+}
+
+.dash_rt > .weekly_weather > .weekly_info > .info {
+   height: 86px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 16px;
+   background-color: #d5d5d5;
+   border-radius: 16px;
+   padding: 10px 16px;
+   margin-bottom: 16px;
+}
+
+.dash_rt > .weekly_weather > .weekly_info > .info h4,
+.dash_rt > .weekly_weather > .weekly_info > .info p {
+   font-size: 14px;
+   font-weight: 700;
+}
+
+.dash_rt > .weekly_weather > .weekly_info > .info span {
+   font-size: 14px;
+   font-weight: 700;
+   color: #5a5a5a;
+}
+
+.dash_rt > .weekly_weather > .weekly_info > .info img {
+   width: 54px;
+   height: 54px;
+}
+
+.dash_rt > .map_container{
+   height: 293px;
+   background-color: #ededed;
+   border-radius: 16px;
+   position: relative;
+}
+
+.dash_rt > .map_container > .map{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   height: 261px;
+   max-width: 384px;
+   border-radius: 16px;
 }
