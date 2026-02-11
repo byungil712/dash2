@@ -43,7 +43,7 @@ const findStart = (maze) => {
 
 const initialState = {
    currentLevel: 1,
-   maze: levels[3],
+   maze: levels[1],
    player: findStart(levels[1]),
    steps: 0,
    isCompleted: false,
