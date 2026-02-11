@@ -18,13 +18,13 @@ const App = () => {
             <nav className="menu">
                <ul>
                   <li>
-                     <Link to="./dash2/">
+                     <Link to="/">
                         <FontAwesomeIcon icon={faCloudSun} className="icon" />
                         <span>Weather</span>
                      </Link>
                   </li>
                   <li>
-                     <Link to="./dash2/DashMiniGame" className="link">
+                     <Link to="./DashMiniGame" className="link">
                         <FontAwesomeIcon icon={faGamepad} className="icon" />
                         <span>MiniGame</span>
                      </Link>
@@ -38,8 +38,8 @@ const App = () => {
                </ul>
             </nav>
             <Routes>
-               <Route path="/dash2/" element={<DashWeather />} />
-               <Route path="/dash2/DashMiniGame" element={<DashMiniGame />} />
+               <Route path="/" element={<DashWeather />} />
+               <Route path="/DashMiniGame" element={<DashMiniGame />} />
             </Routes>
          </div>
       </div>
