@@ -1,0 +1,389 @@
+.dash_lf > .rock_game {
+   height: 100%;
+   max-height: 326px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background-color: #ededed;
+   border-radius: 16px;
+   padding: 16px;
+}
+
+.dash_lf > .rock_game > .title > h3 {
+   font-size: 24px;
+   font-weight: 700;
+}
+
+.dash_lf > .rock_game > .main_game {
+   width: 100%;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   text-align: center;
+   margin-top: 16px;
+}
+
+.dash_lf > .rock_game > .main_game > .user > .box {
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+}
+
+.dash_lf > .rock_game > .main_game > .user > .box > h3,
+.dash_lf > .rock_game > .main_game > .com > .box > h3 {
+   font-size: 24px;
+}
+
+.dash_lf > .rock_game > .main_game > .user > .box > img {
+   background-color: inherit;
+}
+
+.dash_lf > .rock_game > .main_game > .vs {
+   font-size: 36px;
+}
+
+.dash_lf > .rock_game > .rock_btn {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 16px;
+   margin-top: 16px;
+}
+
+.dash_lf > .rock_game > .rock_btn > button {
+   width: 100%;
+   max-width: 80px;
+   background-color: #3498db;
+   color: #fff;
+   border: none;
+   padding: 6px 0;
+   font-size: 14px;
+   font-weight: 700;
+   border-radius: 8px;
+   cursor: pointer;
+}
+
+/* src/Component/maze.css */
+.maze_game {
+   width: 100%;
+   margin: 0 auto;
+   padding: 16px;
+   text-align: center;
+   background-color: #ededed;
+   border-radius: 16px;
+}
+
+.maze_game > .title {
+   margin-bottom: 20px;
+}
+
+.maze_game > .title > h3 {
+   font-size: 24px;
+   margin-bottom: 8px;
+}
+
+.level-selector {
+   display: flex;
+   gap: 10px;
+   justify-content: center;
+}
+
+.level-selector button {
+   padding: 10px 20px;
+   border: 2px solid #3498db;
+   background: white;
+   color: #3498db;
+   border-radius: 8px;
+   cursor: pointer;
+   font-weight: bold;
+   transition: all 0.3s ease;
+}
+
+.level-selector button.active {
+   background: #3498db;
+   color: white;
+}
+
+.level-selector button:hover {
+   transform: scale(1.05);
+}
+
+/* 정보판 */
+.info-panel {
+   display: flex;
+   justify-content: center;
+   gap: 30px;
+   margin-bottom: 20px;
+   padding: 15px;
+   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+   border-radius: 10px;
+   color: white;
+}
+
+.info-item {
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+
+.info-item .label {
+   font-size: 12px;
+   opacity: 0.9;
+}
+
+.info-item .value {
+   font-size: 24px;
+   font-weight: bold;
+}
+
+.best-score {
+   border-left: 2px solid rgba(255, 255, 255, 0.3);
+   padding-left: 30px;
+}
+
+/* 미로 보드 */
+.maze-board {
+   display: inline-block;
+   border: 4px solid #2c3e50;
+   border-radius: 10px;
+   padding: 10px;
+   background: #ecf0f1;
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.maze-row {
+   display: flex;
+}
+
+.maze-cell {
+   width: 40px;
+   height: 40px;
+   border: 1px solid #bdc3c7;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 24px;
+   transition: all 0.2s ease;
+   background: white;
+}
+
+.maze-cell.wall {
+   background: #34495e;
+   border-color: #2c3e50;
+}
+
+.maze-cell.start {
+   background: #3498db;
+}
+
+.maze-cell.goal {
+   background: #2ecc71;
+   animation: pulse 1.5s infinite;
+}
+
+.maze-cell.player {
+   background: #f39c12;
+   transform: scale(1.1);
+   z-index: 10;
+   animation: bounce 0.3s;
+}
+
+@keyframes pulse {
+   0%,
+   100% {
+      opacity: 1;
+   }
+   50% {
+      opacity: 0.6;
+   }
+}
+
+@keyframes bounce {
+   0%,
+   100% {
+      transform: scale(1.1);
+   }
+   50% {
+      transform: scale(1.2);
+   }
+}
+
+/* 완료 모달 */
+.completion-modal {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: rgba(0, 0, 0, 0.8);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   z-index: 1000;
+   animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
+   }
+}
+
+.modal-content {
+   background: white;
+   padding: 40px;
+   border-radius: 20px;
+   text-align: center;
+   animation: slideUp 0.3s;
+}
+
+@keyframes slideUp {
+   from {
+      transform: translateY(50px);
+      opacity: 0;
+   }
+   to {
+      transform: translateY(0);
+      opacity: 1;
+   }
+}
+
+.modal-content h2 {
+   color: #27ae60;
+   margin-bottom: 15px;
+}
+
+.modal-content .stats {
+   font-size: 18px;
+   color: #7f8c8d;
+   margin: 20px 0;
+}
+
+.modal-buttons {
+   display: flex;
+   gap: 15px;
+   justify-content: center;
+   margin-top: 20px;
+}
+
+.modal-buttons button {
+   padding: 12px 24px;
+   border: none;
+   border-radius: 8px;
+   cursor: pointer;
+   font-weight: bold;
+   font-size: 16px;
+   transition: all 0.3s ease;
+}
+
+.modal-buttons button:first-child {
+   background: #95a5a6;
+   color: white;
+}
+
+.modal-buttons button.next-level {
+   background: #27ae60;
+   color: white;
+}
+
+.modal-buttons button:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 컨트롤 안내 */
+.controls-info {
+   margin-top: 20px;
+   padding: 15px;
+   background: #f8f9fa;
+   border-radius: 8px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.controls-info p {
+   margin: 0;
+   color: #7f8c8d;
+}
+
+.reset-btn {
+   padding: 10px 20px;
+   background: #e74c3c;
+   color: white;
+   border: none;
+   border-radius: 8px;
+   cursor: pointer;
+   font-weight: bold;
+   transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+   background: #c0392b;
+}
+
+/* 모바일 컨트롤 */
+.mobile-controls {
+   display: none;
+   margin-top: 20px;
+}
+
+.control-row {
+   display: flex;
+   gap: 10px;
+   justify-content: center;
+   margin-bottom: 10px;
+}
+
+.mobile-controls button {
+   width: 60px;
+   height: 60px;
+   font-size: 24px;
+   border: 2px solid #3498db;
+   background: white;
+   border-radius: 10px;
+   cursor: pointer;
+   transition: all 0.2s ease;
+}
+
+.mobile-controls button:active {
+   background: #3498db;
+   transform: scale(0.95);
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+   .maze-cell {
+      width: 30px;
+      height: 30px;
+      font-size: 18px;
+   }
+
+   .mobile-controls {
+      display: block;
+   }
+
+   .info-panel {
+      flex-direction: column;
+      gap: 10px;
+   }
+
+   .best-score {
+      border-left: none;
+      border-top: 2px solid rgba(255, 255, 255, 0.3);
+      padding-left: 0;
+      padding-top: 10px;
+   }
+}
+
+@media (max-width: 480px) {
+   .maze-cell {
+      width: 25px;
+      height: 25px;
+      font-size: 16px;
+   }
+}
