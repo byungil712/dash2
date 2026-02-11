@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { playGame, resetGame } from "../Script/gameSlice";
+import { playGame } from "../Script/gameSlice";
 import Box from "./Box";
 import Maze from "./Maze";
 
@@ -11,10 +11,6 @@ const DashMiniGame = () => {
 
    const play = (choice) => {
       dispatch(playGame(choice));
-   };
-
-   const handleReset = () => {
-      dispatch(resetGame());
    };
 
    return (

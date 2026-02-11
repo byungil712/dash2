@@ -19,26 +19,18 @@ const Maze = () => {
 
          switch (e.key) {
             case "ArrowUp":
-            case "w":
-            case "W":
                e.preventDefault();
                dispatch(movePlayer({ direction: "UP" }));
                break;
             case "ArrowDown":
-            case "s":
-            case "S":
                e.preventDefault();
                dispatch(movePlayer({ direction: "DOWN" }));
                break;
             case "ArrowLeft":
-            case "a":
-            case "A":
                e.preventDefault();
                dispatch(movePlayer({ direction: "LEFT" }));
                break;
             case "ArrowRight":
-            case "d":
-            case "D":
                e.preventDefault();
                dispatch(movePlayer({ direction: "RIGHT" }));
                break;
