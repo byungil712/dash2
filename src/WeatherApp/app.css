@@ -138,7 +138,8 @@ body {
 .dash > .dash_i > .dash_lf > .city_selector > button {
    width: 100%;
    max-width: 80px;
-   background-color: #d5d5d5;
+   background-color: #3498db;
+   color: #fff;
    border: none;
    padding: 6px 0;
    font-size: 14px;
@@ -226,6 +227,15 @@ body {
 
 .dash_lf > .weather_info > .info_lf > .info > p:first-child {
    font-size: 24px;
+}
+
+.dash_lf > .weather_info > .info_rt > .weather_img{
+   border-radius: 100%;
+   background-color: #bebebe;
+} 
+
+.dash_lf > .weather_info > .info_rt > .weather_img > img{
+   padding: 8px;
 }
 
 .dash_rt {

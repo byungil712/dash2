@@ -1,14 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import weatherSlice from "./slice";
 import gameSlice from "./gameSlice";
-import mazeReducer from "./mazeSlice";
+import mazeSlice from "./mazeSlice";
 
 const store = configureStore({
    reducer: { 
       weather: weatherSlice,
       game : gameSlice,
-      maze: mazeReducer,
-   },
+      maze : mazeSlice,
+   }, 
 });
 
 export default store;

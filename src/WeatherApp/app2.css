@@ -83,82 +83,28 @@
    margin-bottom: 8px;
 }
 
-.level-selector {
-   display: flex;
-   gap: 10px;
-   justify-content: center;
-}
-
-.level-selector button {
-   padding: 10px 20px;
-   border: 2px solid #3498db;
-   background: white;
-   color: #3498db;
-   border-radius: 8px;
-   cursor: pointer;
-   font-weight: bold;
-   transition: all 0.3s ease;
-}
-
-.level-selector button.active {
-   background: #3498db;
-   color: white;
-}
-
-.level-selector button:hover {
-   transform: scale(1.05);
-}
-
-/* 정보판 */
-.info-panel {
-   display: flex;
-   justify-content: center;
-   gap: 30px;
-   margin-bottom: 20px;
-   padding: 15px;
-   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-   border-radius: 10px;
-   color: white;
-}
-
-.info-item {
-   display: flex;
-   flex-direction: column;
-   gap: 5px;
-}
-
-.info-item .label {
-   font-size: 12px;
-   opacity: 0.9;
-}
-
-.info-item .value {
-   font-size: 24px;
-   font-weight: bold;
-}
-
-.best-score {
-   border-left: 2px solid rgba(255, 255, 255, 0.3);
-   padding-left: 30px;
+.maze_game > .title > span{
+   font-size: 16px;
+   font-weight: 700;
 }
 
 /* 미로 보드 */
-.maze-board {
+.maze_board {
    display: inline-block;
-   border: 4px solid #2c3e50;
-   border-radius: 10px;
-   padding: 10px;
+   border: 3px solid #2c3e50;
+   border-radius: 16px;
+   padding: 18px;
    background: #ecf0f1;
    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.maze-row {
+.maze_row {
    display: flex;
 }
 
-.maze-cell {
-   width: 40px;
-   height: 40px;
+.maze_cell {
+   width: 33px;
+   height: 33px;
    border: 1px solid #bdc3c7;
    display: flex;
    align-items: center;
@@ -168,21 +114,21 @@
    background: white;
 }
 
-.maze-cell.wall {
+.maze_cell.wall {
    background: #34495e;
    border-color: #2c3e50;
 }
 
-.maze-cell.start {
+.maze_cell.start {
    background: #3498db;
 }
 
-.maze-cell.goal {
+.maze_cell.goal {
    background: #2ecc71;
    animation: pulse 1.5s infinite;
 }
 
-.maze-cell.player {
+.maze_cell.player {
    background: #f39c12;
    transform: scale(1.1);
    z-index: 10;
@@ -210,7 +156,7 @@
 }
 
 /* 완료 모달 */
-.completion-modal {
+.complete_modal {
    position: fixed;
    top: 0;
    left: 0;
@@ -233,7 +179,7 @@
    }
 }
 
-.modal-content {
+.clear_popup {
    background: white;
    padding: 40px;
    border-radius: 20px;
@@ -252,25 +198,19 @@
    }
 }
 
-.modal-content h2 {
+.clear_popup h2 {
    color: #27ae60;
    margin-bottom: 15px;
 }
 
-.modal-content .stats {
-   font-size: 18px;
-   color: #7f8c8d;
-   margin: 20px 0;
-}
-
-.modal-buttons {
+.popup_buttons {
    display: flex;
    gap: 15px;
    justify-content: center;
    margin-top: 20px;
 }
 
-.modal-buttons button {
+.popup_buttons button {
    padding: 12px 24px;
    border: none;
    border-radius: 8px;
@@ -280,14 +220,19 @@
    transition: all 0.3s ease;
 }
 
-.modal-buttons button:first-child {
-   background: #95a5a6;
-   color: white;
+.popup_buttons button:first-child {
+   background-color: #3498db;
+   color: #fff;
 }
 
-.modal-buttons button.next-level {
-   background: #27ae60;
-   color: white;
+.popup_buttons button:nth-child(2) {
+   background-color: #27ae60;
+   color: #fff;
+}
+
+.popup_buttons button:last-child {
+   background-color: #ca59ff;
+   color: #fff;
 }
 
 .modal-buttons button:hover {
@@ -295,51 +240,20 @@
    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* 컨트롤 안내 */
-.controls-info {
-   margin-top: 20px;
-   padding: 15px;
-   background: #f8f9fa;
-   border-radius: 8px;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-}
-
-.controls-info p {
-   margin: 0;
-   color: #7f8c8d;
-}
-
-.reset-btn {
-   padding: 10px 20px;
-   background: #e74c3c;
-   color: white;
-   border: none;
-   border-radius: 8px;
-   cursor: pointer;
-   font-weight: bold;
-   transition: all 0.3s ease;
-}
-
-.reset-btn:hover {
-   background: #c0392b;
-}
-
 /* 모바일 컨트롤 */
-.mobile-controls {
+.mobile_controls {
    display: none;
    margin-top: 20px;
 }
 
-.control-row {
+.control_row {
    display: flex;
    gap: 10px;
    justify-content: center;
    margin-bottom: 10px;
 }
 
-.mobile-controls button {
+.mobile_controls button {
    width: 60px;
    height: 60px;
    font-size: 24px;
@@ -350,7 +264,7 @@
    transition: all 0.2s ease;
 }
 
-.mobile-controls button:active {
+.mobile_controls button:active {
    background: #3498db;
    transform: scale(0.95);
 }
@@ -363,13 +277,8 @@
       font-size: 18px;
    }
 
-   .mobile-controls {
+   .mobile_controls {
       display: block;
-   }
-
-   .info-panel {
-      flex-direction: column;
-      gap: 10px;
    }
 
    .best-score {

@@ -22,7 +22,7 @@ const DashMiniGame = () => {
          <div className="dash_lf">
             <div className="rock_game">
                <div className="title">
-                  <h3>가위바위보</h3>
+                  <h3>가위바위보 ✌️</h3>
                </div>
                <div className="main_game">
                   <div className="user">
@@ -43,7 +43,9 @@ const DashMiniGame = () => {
             </div>
             <Maze />
          </div>
-         <div className="dash_rt"></div>
+         <div className="dash_rt">
+            {/* <TicTacToe /> */}
+         </div>
       </div>
    );
 };

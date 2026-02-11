@@ -66,18 +66,19 @@ const Maze = () => {
       <div className="maze_game">
          {/* 헤더 */}
          <div className="title">
-            <h3>미로 게임</h3>
+            <h3>미로 게임 🏁</h3>
+            <span>방향키로 움직여보세요!</span>
          </div>
 
          {/* 미로 */}
-         <div className="maze-board">
+         <div className="maze_board">
             {maze.map((row, rowIndex) => (
-               <div key={rowIndex} className="maze-row">
+               <div key={rowIndex} className="maze_row">
                   {row.map((cell, colIndex) => {
                      const isPlayer =
                         player.row === rowIndex && player.col === colIndex;
 
-                     let cellClass = "maze-cell";
+                     let cellClass = "maze_cell";
                      if (cell === 1) cellClass += " wall";
                      if (cell === 2) cellClass += " start";
                      if (cell === 3) cellClass += " goal";
@@ -96,20 +97,19 @@ const Maze = () => {
 
          {/* 완료 메시지 */}
          {isCompleted && (
-            <div className="completion-modal">
-               <div className="modal-content">
+            <div className="complete_modal">
+               <div className="clear_popup">
                   <h2>🎉 축하합니다!</h2>
                   <p>미로 레벨 {currentLevel} 클리어!</p>
-                  <div className="modal-buttons">
+                  <div className="popup_buttons">
                      <button onClick={() => dispatch(resetGame())}>
                         다시하기
                      </button>
-                     {currentLevel <= 3 && (
+                     {currentLevel < 3 && (
                         <button
                            onClick={() =>
                               dispatch(changeLevel(currentLevel + 1))
                            }
-                           className="next-level"
                         >
                            다음 레벨
                         </button>
@@ -123,11 +123,9 @@ const Maze = () => {
          )}
 
          {/* 모바일 컨트롤 */}
-         <div className="mobile-controls">
-            <div className="control-row">
+         <div className="mobile_controls">
+            <div className="control_row">
                <button onClick={() => handleMobileMove("UP")}>⬆️</button>
-            </div>
-            <div className="control-row">
                <button onClick={() => handleMobileMove("LEFT")}>⬅️</button>
                <button onClick={() => handleMobileMove("DOWN")}>⬇️</button>
                <button onClick={() => handleMobileMove("RIGHT")}>➡️</button>
