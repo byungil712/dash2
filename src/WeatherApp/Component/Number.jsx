@@ -37,7 +37,7 @@ const Number = () => {
       <div className="number_game">
          <div className="title">
             <h3>숫자 맞추기 게임</h3>
-            <span>1 - 10까지의 숫자 중 랜덤으로 지정됩니다!</span>
+            <span>0 - 10까지의 숫자 중 랜덤으로 지정됩니다!</span>
          </div>
          <div className="clear_game">
             <h3>정답: {guessMessage}</h3>

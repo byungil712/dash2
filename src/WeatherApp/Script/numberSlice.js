@@ -23,8 +23,8 @@ const numberSlice = createSlice({
          }
 
          // 범위 확인
-         if (userGuess < 1 || userGuess > 10) {
-            state.message = "1~10 사이의 숫자를 입력해주세요";
+         if (userGuess < 0 || userGuess > 10) {
+            state.message = "0~10의 숫자를 입력해주세요";
             return;
          }
 
