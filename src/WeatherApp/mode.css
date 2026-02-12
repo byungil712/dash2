@@ -40,6 +40,10 @@ body.dark_mode .dash .dash_i{
    background-color: var(--bg-tertiary);
 }
 
+body .card{
+   border: 1px solid var(--border-color);
+}
+
 body.dark_mode .card{
    background-color: var(--bg-tertiary);
    border: 1px solid var(--border-color);
@@ -57,8 +61,16 @@ body.dark_mode .dash .dash_i > .dash_lf > .time_weather{
    background-color: var(--bg-tertiary);
 }
 
+body .dash > .dash_i > .dash_lf > .time_weather > .times > .time{
+   border: 1px solid var(--border-color);
+}
+
 body.dark_mode .dash > .dash_i > .dash_lf > .time_weather > .times > .time{
    background-color: var(--input-bg);
+   border: 1px solid var(--border-color);
+}
+
+body .dash > .dash_i > .dash_rt > .weekly_weather > .weekly_info > .info{
    border: 1px solid var(--border-color);
 }
 
