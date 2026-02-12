@@ -22,7 +22,7 @@ body.dark_mode {
    --text-secondary: #b0b0b0;
    --border-color: #444444;
    --shadow: #FFFFFF1A;
-   --card-bg: #1f1f1f;
+   --card-bg: #424242;
    --input-bg: #3a3a3a;
    --button-bg: #5dade2;
    --button-text: #ffffff;
@@ -45,12 +45,35 @@ body.dark_mode .card{
    border: 1px solid var(--border-color);
 }
 
+body.dark_mode .dash > .dash_i > .dash_lf > form > input{
+   background-color: var(--input-bg);
+}
+
+body.dark_mode .dash > .dash_i > .dash_lf > .city_selector{
+   background-color: var(--bg-tertiary);
+}
+
+body.dark_mode .dash .dash_i > .dash_lf > .time_weather{
+   background-color: var(--bg-tertiary);
+}
+
+body.dark_mode .dash > .dash_i > .dash_lf > .time_weather > .times > .time{
+   background-color: var(--input-bg);
+   border: 1px solid var(--border-color);
+}
+
+body.dark_mode .dash > .dash_i > .dash_rt > .weekly_weather > .weekly_info > .info{
+   background-color: var(--input-bg);
+   border: 1px solid var(--border-color);
+}
+
 body.dark_mode .card p,
 body.dark_mode .card span,
 body.dark_mode .card h1,
 body.dark_mode .card h2,
 body.dark_mode .card h3,
-body.dark_mode .card h4{
+body.dark_mode .card h4,
+body.dark_mode .card a{
    color: var(--text-primary);
 }
 
