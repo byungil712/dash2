@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, Route, Routes } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,9 +10,19 @@ import {
 import DashWeather from "./Component/DashWeather";
 import DashMiniGame from "./Component/DashMiniGame";
 import "./app.css";
-import "./app2.css";
+import "./game.css";
+import "./mode.css";
+import { setTheme, toggleTheme } from "./Script/modeSlice";
 
 const App = () => {
+   const dispatch = useDispatch();
+
+   const { mode } = useSelector((state) => state.mode);
+
+   useEffect(() => {
+      document.body.classList.toggle("dark_mode", mode === "dark");
+   }, [mode]);
+
    return (
       <div className="container">
          <div className="dash">
@@ -29,11 +40,9 @@ const App = () => {
                         <span>MiniGame</span>
                      </Link>
                   </li>
-                  <li>
-                     <a>
-                        <FontAwesomeIcon icon={faMoon} className="icon" />
-                        <span>Mode</span>
-                     </a>
+                  <li onClick={() => dispatch(toggleTheme())}>
+                     <FontAwesomeIcon icon={faMoon} className="icon" />
+                     <span>{mode === "dark" ? "Dark" : "Light"}Mode</span>
                   </li>
                </ul>
             </nav>

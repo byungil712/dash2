@@ -90,7 +90,7 @@ const WeatherBox2 = ({ handleMapLocationChange, currentLat, currentLon }) => {
    return (
       <>
          {/* 주간 날씨 */}
-         <div className="weekly_weather">
+         <div className="weekly_weather card">
             <div className="title">
                <h3>5일간의 날씨 정보</h3>
             </div>

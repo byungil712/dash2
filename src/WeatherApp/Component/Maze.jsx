@@ -8,7 +8,7 @@ import {
 
 const Maze = () => {
    const dispatch = useDispatch();
-   const { maze, player, isCompleted, currentLevel } = useSelector(
+   const { maze, player, img, isCompleted, currentLevel } = useSelector(
       (state) => state.maze,
    );
 
@@ -55,7 +55,7 @@ const Maze = () => {
    };
 
    return (
-      <div className="maze_game">
+      <div className="maze_game card">
          {/* 헤더 */}
          <div className="title">
             <h3>미로 게임 🏁</h3>
@@ -78,7 +78,7 @@ const Maze = () => {
 
                      return (
                         <div key={colIndex} className={cellClass}>
-                           {isPlayer && "🐥"}
+                           <img src={isPlayer && img} alt="" />
                            {cell === 3 && !isPlayer && "🏁"}
                         </div>
                      );

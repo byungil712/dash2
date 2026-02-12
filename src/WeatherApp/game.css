@@ -37,8 +37,11 @@
 }
 
 /* 가위바위보 이미지 */
-.dash_lf > .rock_game > .main_game > .user > .box > img {
-   background-color: inherit;
+.img_box {
+   border-radius: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .dash_lf > .rock_game > .main_game > .vs {
@@ -276,13 +279,15 @@
 /* 틱택토 */
 .tictactoe_game {
    width: 100%;
+   height: 100%;
+   max-height: 362px;
    overflow: hidden;
    margin: 0 auto;
    padding: 16px;
    text-align: center;
    display: flex;
    flex-direction: column;
-   gap: 16px;
+   justify-content: space-between;
    background-color: #ededed;
    border-radius: 16px;
 }
@@ -301,7 +306,7 @@
    gap: 16px;
 }
 
-.tictactoe_flex > .tictactoe_btn{
+.tictactoe_flex > .tictactoe_btn {
    width: 100%;
    max-width: 212px;
    display: flex;
@@ -433,7 +438,7 @@
 }
 
 /* 숫자게임 */
-.number_game{
+.number_game {
    display: flex;
    flex-direction: column;
    text-align: center;
@@ -442,17 +447,17 @@
    border-radius: 16px;
 }
 
-.number_game > .title{
+.number_game > .title {
    margin-bottom: 16px;
 }
 
-.number_game > .title > h3{
+.number_game > .title > h3 {
    font-size: 24px;
    font-weight: 700;
    margin-bottom: 8px;
 }
 
-.number_game > .clear_game{
+.number_game > .clear_game {
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -460,17 +465,17 @@
    margin-bottom: 16px;
 }
 
-.number_game > .clear_game > h3{
+.number_game > .clear_game > h3 {
    font-size: 18px;
    color: #3498db;
 }
 
-.number_game > .clear_game > p{
+.number_game > .clear_game > p {
    font-size: 14px;
    font-weight: 700;
 }
 
-.number_game > .clear_game > .reset_btn{
+.number_game > .clear_game > .reset_btn {
    width: 100%;
    max-width: 80px;
    background-color: #3498db;
@@ -483,7 +488,7 @@
    cursor: pointer;
 }
 
-.number_game > .input_form > input{
+.number_game > .input_form > input {
    background-color: #fff;
    border-radius: 16px;
 }

@@ -3,7 +3,8 @@ import weatherSlice from "./slice";
 import gameSlice from "./gameSlice";
 import mazeSlice from "./mazeSlice";
 import ticTacToeSlice from "./ticTacToeSlice"
-import numberSlice from "./numberSlice"
+import numberSlice from "./numberSlice";
+import modeSlice from "./modeSlice";
 
 
 const store = configureStore({
@@ -12,7 +13,8 @@ const store = configureStore({
       game : gameSlice,
       maze : mazeSlice,
       ticTacToe : ticTacToeSlice,
-      number : numberSlice
+      number : numberSlice,
+      mode : modeSlice
    }, 
 });
 

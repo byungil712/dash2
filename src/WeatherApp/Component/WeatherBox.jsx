@@ -41,7 +41,7 @@ const WeatherBox = ({ cities, getCurrentLocation, handleCityChange }) => {
    return (
       <>
          {/* 도시 선택 */}
-         <div className="city_selector">
+         <div className="city_selector card">
             <button type="button" onClick={() => handleCityChange("current")}>
                현재위치
             </button>
@@ -57,7 +57,7 @@ const WeatherBox = ({ cities, getCurrentLocation, handleCityChange }) => {
          </div>
 
          {/* 시간대별 날씨 */}
-         <div className="time_weather">
+         <div className="time_weather card">
             <h2>시간대별 날씨 정보</h2>
             <div
                className="times"
@@ -90,7 +90,7 @@ const WeatherBox = ({ cities, getCurrentLocation, handleCityChange }) => {
          </div>
 
          {/* 날씨 정보 */}
-         <div className="weather_info">
+         <div className="weather_info card">
             <div className="info_lf">
                <div className="title">
                   <h3>{weather?.name}</h3>

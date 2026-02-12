@@ -36,7 +36,7 @@ function LocationMarker({ handleMapLocationChange }) {
 
 const Map = ({ handleMapLocationChange, currentLat, currentLon }) => {
    return (
-      <div className="map_container">
+      <div className="map_container card">
          <MapContainer
             center={[currentLat || 37.5665, currentLon || 126.978]} // 기본: 서울
             zoom={10}

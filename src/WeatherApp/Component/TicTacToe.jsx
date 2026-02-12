@@ -27,7 +27,7 @@ const TicTacToe = () => {
    };
 
    return (
-      <div className="tictactoe_game">
+      <div className="tictactoe_game card">
          <div className="title">
             <h1>틱택토 ❌⭕</h1>
          </div>

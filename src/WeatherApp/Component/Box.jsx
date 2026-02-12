@@ -10,13 +10,18 @@ const Box = ({ name, item, result }) => {
    }
 
    return (
-      <div className={`box ${displayResult}`} style={{textTransform: "uppercase"}}>
+      <div
+         className={`box ${displayResult}`}
+         style={{ textTransform: "uppercase" }}
+      >
          <h3>{name}</h3>
-         <img 
-            className="item-img" 
-            src={item?.img || "./img/select.png"} 
-            alt={item?.name}
-         />
+         <div className="img_box">
+            <img
+               className="item-img"
+               src={item?.img || "./img/select.png"}
+               alt={item?.name}
+            />
+         </div>
          <h2>{displayResult || "대기 중.."}</h2>
       </div>
    );

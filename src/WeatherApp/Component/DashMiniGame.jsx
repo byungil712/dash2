@@ -18,7 +18,7 @@ const DashMiniGame = () => {
    return (
       <div className="dash_i">
          <div className="dash_lf">
-            <div className="rock_game">
+            <div className="rock_game card">
                <div className="title">
                   <h3>가위바위보 ✌️</h3>
                </div>

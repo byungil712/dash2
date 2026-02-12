@@ -1,5 +1,35 @@
 @import "leaflet/dist/leaflet.css";
 
+/* 라이트 모드 */
+:root {
+   --bg-primary: #ffffff;
+   --bg-secondary: #ccc;
+   --bg-tertiary: #e8e8e8;
+   --text-primary: #000000;
+   --text-secondary: #666666;
+   --border-color: #dddddd;
+   --shadow: rgba(0, 0, 0, 0.1);
+   --card-bg: #ffffff;
+   --input-bg: #ffffff;
+   --button-bg: #3498db;
+   --button-text: #ffffff;
+}
+
+/* 다크 모드 */
+body.dark_mode {
+   --bg-primary: #fff;
+   --bg-secondary: #1f1f1f;
+   --bg-tertiary: #3a3a3a;
+   --text-primary: #ffffff;
+   --text-secondary: #b0b0b0;
+   --border-color: #444444;
+   --shadow: rgba(0, 0, 0, 0.5);
+   --card-bg: #1f1f1f;
+   --input-bg: #3a3a3a;
+   --button-bg: #5dade2;
+   --button-text: #ffffff;
+}
+
 * {
    padding: 0;
    margin: 0;
@@ -40,6 +70,7 @@ img {
 
 body {
    height: 100vh;
+   background-color: var(--bg-primary);
 }
 
 .container {
@@ -48,6 +79,7 @@ body {
    justify-content: center;
    align-items: center;
    padding: 0 16px;
+   background-color: var(--bg-primary);
 }
 
 .dash {
@@ -57,7 +89,7 @@ body {
    max-height: 766px;
    display: flex;
    justify-content: space-between;
-   background-color: #333;
+   background-color: var(--bg-secondary);
    border-radius: 16px;
    padding: 15px 0;
    padding-right: 21px;
@@ -73,6 +105,15 @@ body {
    display: flex;
    flex-direction: column;
    gap: 24px;
+}
+
+.dash .menu ul li{
+   display: flex;
+   align-items: center;
+   font-size: 16px;
+   font-weight: 700;
+   color: #fff;
+   gap: 8px;
 }
 
 .dash .menu ul li a{
@@ -243,6 +284,7 @@ body {
    max-width: 416px;
    display: flex;
    flex-direction: column;
+   justify-content: space-between;
    gap: 16px;
 }
 

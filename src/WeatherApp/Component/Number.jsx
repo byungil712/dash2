@@ -34,7 +34,7 @@ const Number = () => {
    };
 
    return (
-      <div className="number_game">
+      <div className="number_game card">
          <div className="title">
             <h3>숫자 맞추기 게임</h3>
             <span>0 - 10까지의 숫자 중 랜덤으로 지정됩니다!</span>
@@ -52,7 +52,7 @@ const Number = () => {
                type="text"
                value={input}
                onChange={handleInputChange}
-               placeholder="숫자 입력 (1-10)"
+               placeholder="숫자 입력 (0-10)"
                min="1"
                max="10"
                className="number-input"
