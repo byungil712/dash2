@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { playGame } from "../Script/gameSlice";
 import Box from "./Box";
 import Maze from "./Maze";
+import TicTacToe from "./TicTacToe";
+import Number from "./Number";
 
 const DashMiniGame = () => {
    const dispatch = useDispatch();
@@ -40,7 +42,8 @@ const DashMiniGame = () => {
             <Maze />
          </div>
          <div className="dash_rt">
-            {/* <TicTacToe /> */}
+            <TicTacToe />
+            <Number />
          </div>
       </div>
    );

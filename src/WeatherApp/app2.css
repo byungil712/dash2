@@ -1,8 +1,10 @@
+/* 가위바위보 */
 .dash_lf > .rock_game {
    height: 100%;
    max-height: 326px;
    display: flex;
    flex-direction: column;
+   justify-content: space-between;
    align-items: center;
    background-color: #ededed;
    border-radius: 16px;
@@ -34,6 +36,7 @@
    font-size: 24px;
 }
 
+/* 가위바위보 이미지 */
 .dash_lf > .rock_game > .main_game > .user > .box > img {
    background-color: inherit;
 }
@@ -42,6 +45,7 @@
    font-size: 36px;
 }
 
+/* 가위바위보 버튼 */
 .dash_lf > .rock_game > .rock_btn {
    width: 100%;
    display: flex;
@@ -64,7 +68,7 @@
    cursor: pointer;
 }
 
-/* src/Component/maze.css */
+/* 미로 */
 .maze_game {
    width: 100%;
    margin: 0 auto;
@@ -83,7 +87,7 @@
    margin-bottom: 8px;
 }
 
-.maze_game > .title > span{
+.maze_game > .title > span {
    font-size: 16px;
    font-weight: 700;
 }
@@ -155,7 +159,7 @@
    }
 }
 
-/* 완료 모달 */
+/* 미로 완료 팝업창 */
 .complete_modal {
    position: fixed;
    top: 0;
@@ -240,7 +244,7 @@
    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* 모바일 컨트롤 */
+/* 미로 모바일 컨트롤 */
 .mobile_controls {
    display: none;
    margin-top: 20px;
@@ -269,30 +273,217 @@
    transform: scale(0.95);
 }
 
-/* 모바일 반응형 */
-@media (max-width: 768px) {
-   .maze-cell {
-      width: 30px;
-      height: 30px;
-      font-size: 18px;
-   }
+/* 틱택토 */
+.tictactoe_game {
+   width: 100%;
+   overflow: hidden;
+   margin: 0 auto;
+   padding: 16px;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   gap: 16px;
+   background-color: #ededed;
+   border-radius: 16px;
+}
 
-   .mobile_controls {
-      display: block;
-   }
+.title h1 {
+   color: #2c3e50;
+   font-size: 24px;
+}
 
-   .best-score {
-      border-left: none;
-      border-top: 2px solid rgba(255, 255, 255, 0.3);
-      padding-left: 0;
-      padding-top: 10px;
+.tictactoe_flex {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   gap: 16px;
+}
+
+.tictactoe_flex > .tictactoe_btn{
+   width: 100%;
+   max-width: 212px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 24px;
+}
+
+.tictactoe_flex > .tictactoe_btn > .controls {
+   width: 100%;
+   max-width: 80px;
+}
+
+.tictactoe_flex > .tictactoe_btn > .controls > .reset-btn {
+   width: 100%;
+   max-width: 80px;
+   background-color: #3498db;
+   color: #fff;
+   border: none;
+   padding: 6px 0;
+   font-size: 14px;
+   font-weight: 700;
+   border-radius: 8px;
+   cursor: pointer;
+}
+
+/* 틱택토 현재 턴 표시 */
+.turn {
+   font-size: 20px;
+   font-weight: 700;
+}
+
+.current_player {
+   font-size: 20px;
+   animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+   0%,
+   100% {
+      opacity: 1;
+      transform: scale(1);
+   }
+   50% {
+      opacity: 0.7;
+      transform: scale(1.1);
    }
 }
 
-@media (max-width: 480px) {
-   .maze-cell {
-      width: 25px;
-      height: 25px;
-      font-size: 16px;
+/* 틱택토 게임 보드 */
+.board {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 8px;
+   margin: 0 auto;
+   padding: 8px;
+   background: #ecf0f1;
+   border-radius: 16px;
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.board > .cell {
+   width: 65px;
+   height: 65px;
+   aspect-ratio: 1;
+   background: #fff;
+   border: 3px solid #bdc3c7;
+   border-radius: 16px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 32px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   user-select: none;
+}
+
+.board > .cell.x {
+   animation: fadeIn 0.3s;
+}
+
+.board .cell.o {
+   animation: fadeIn 0.3s;
+}
+
+.board .cell.game-over {
+   cursor: not-allowed;
+}
+
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+      transform: scale(0.5);
    }
+   to {
+      opacity: 1;
+      transform: scale(1);
+   }
+}
+
+/* 틱택토 게임 결과 */
+.game_result {
+   border-radius: 16px;
+   animation: slideDown 0.5s;
+}
+
+@keyframes slideDown {
+   from {
+      opacity: 0;
+      transform: translateY(-20px);
+   }
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+.winner_message,
+.draw_message {
+   font-size: 20px;
+}
+
+.winner_message.x {
+   color: #e74c3c;
+}
+
+.winner_message.o {
+   color: #3498db;
+}
+
+/* 숫자게임 */
+.number_game{
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   padding: 16px;
+   background-color: #ededed;
+   border-radius: 16px;
+}
+
+.number_game > .title{
+   margin-bottom: 16px;
+}
+
+.number_game > .title > h3{
+   font-size: 24px;
+   font-weight: 700;
+   margin-bottom: 8px;
+}
+
+.number_game > .clear_game{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 8px;
+   margin-bottom: 16px;
+}
+
+.number_game > .clear_game > h3{
+   font-size: 18px;
+   color: #3498db;
+}
+
+.number_game > .clear_game > p{
+   font-size: 14px;
+   font-weight: 700;
+}
+
+.number_game > .clear_game > .reset_btn{
+   width: 100%;
+   max-width: 80px;
+   background-color: #3498db;
+   color: #fff;
+   border: none;
+   padding: 6px 0;
+   font-size: 14px;
+   font-weight: 700;
+   border-radius: 8px;
+   cursor: pointer;
+}
+
+.number_game > .input_form > input{
+   background-color: #fff;
+   border-radius: 16px;
 }
