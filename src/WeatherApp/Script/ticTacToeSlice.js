@@ -41,7 +41,7 @@ const checkDraw = (board) => {
    return board.every((cell) => cell !== null);
 };
 
-// 컴퓨터 AI (어려움 - Minimax 알고리즘 간단 버전)
+// 컴퓨터 AI
 const getComputerMoveHard = (board, player) => {
    // 1. 이길 수 있는 수가 있으면 그걸 둔다
    for (let i = 0; i < 9; i++) {
@@ -67,9 +67,9 @@ const getComputerMoveHard = (board, player) => {
    }
 
    // 3. 중앙이 비어있으면 중앙을 선택
-   if (board[4] === null) {
-      return 4;
-   }
+   // if (board[4] === null) {
+   //    return 4;
+   // }
 
    // 4. 코너 중 하나를 선택
    const corners = [0, 2, 6, 8];

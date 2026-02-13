@@ -14,7 +14,7 @@ const modeSlice = createSlice({
          // localStorage에 저장 (새로고침 후에도 유지)
          localStorage.setItem("mode", state.mode);
          // body에 클래스 추가/제거
-         document.body.classList.toggle("dark-mode", state.mode === "dark");
+         document.body.classList.toggle("dark_mode", state.mode === "dark");
       },
       setTheme: (state, action) => {
          state.mode = action.payload;

@@ -3,14 +3,14 @@
    --bg-primary: #fff;
    --bg-secondary: #ccc;
    --bg-tertiary: #e8e8e8;
-   --text-primary: #000000;
-   --text-secondary: #666666;
-   --border-color: #dddddd;
+   --text-primary: #000;
+   --text-secondary: #666;
+   --border-color: #ddd;
    --shadow: rgba(0, 0, 0, 0.1);
-   --card-bg: #ffffff;
-   --input-bg: #ffffff;
+   --card-bg: #fff;
+   --input-bg: #fff;
    --button-bg: #3498db;
-   --button-text: #ffffff;
+   --button-text: #fff;
 }
 
 /* 다크 모드 */
@@ -18,14 +18,14 @@ body.dark_mode {
    --bg-primary: #131313;
    --bg-secondary: #1f1f1f;
    --bg-tertiary: #2d2d2d;
-   --text-primary: #ffffff;
-   --text-secondary: #b0b0b0;
-   --border-color: #444444;
+   --text-primary: #fff;
+   --text-secondary: #000;
+   --border-color: #444;
    --shadow: #FFFFFF1A;
    --card-bg: #424242;
    --input-bg: #3a3a3a;
    --button-bg: #5dade2;
-   --button-text: #ffffff;
+   --button-text: #fff;
 }
 
 body.dark_mode{
@@ -55,6 +55,10 @@ body.dark_mode .dash > .dash_i > .dash_lf > form > input{
 
 body.dark_mode .dash > .dash_i > .dash_lf > .city_selector{
    background-color: var(--bg-tertiary);
+}
+
+body.dark_mode .dash > .dash_i > .dash_lf > .city_selector button{
+   border: 1px solid var(--border-color);
 }
 
 body.dark_mode .dash .dash_i > .dash_lf > .time_weather{
@@ -89,6 +93,16 @@ body.dark_mode .card a{
    color: var(--text-primary);
 }
 
+body.dark_mode .card .clear_popup h2,
+body.dark_mode .card .clear_popup p{
+   color: var(--text-secondary);
+}
+
+body.dark_mode .map_container span,
+body.dark_mode .map_container a{
+   color: var(--text-secondary);
+}
+
 body.dark_mode .img_box{
    background-color: var(--text-primary);
    border-radius: 100%;
@@ -97,6 +111,6 @@ body.dark_mode .img_box{
    align-items: center;
 }
 
-body.dark_mode .clear_gmae h3{
+body.dark_mode .clear_game h3{
    color: var(--button-bg);
 }

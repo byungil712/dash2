@@ -114,6 +114,7 @@ body {
    font-weight: 700;
    color: #fff;
    gap: 8px;
+   cursor: pointer;
 }
 
 .dash .menu ul li a{
@@ -128,6 +129,7 @@ body {
 .dash .menu ul li .icon {
    width: 36px;
    height: 36px;
+   cursor: pointer;
 }
 
 .dash > .dash_i {
