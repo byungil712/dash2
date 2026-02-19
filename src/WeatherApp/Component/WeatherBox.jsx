@@ -80,7 +80,7 @@ const WeatherBox = ({ cities, getCurrentLocation, handleCityChange }) => {
                         })}
                      </p>
                      <img
-                        src={`https://openweathermap.org/img/wn/${item.weather[0].icon}.png`}
+                        src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
                         alt="/"
                      />
                      <p>{item.main.temp}°C</p>

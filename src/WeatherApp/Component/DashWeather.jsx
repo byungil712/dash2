@@ -12,7 +12,7 @@ const DashWeather = () => {
    const [currentLat, setCurrentLat] = useState(null);
    const [currentLon, setCurrentLon] = useState(null);
 
-   const cities = ["Seoul", "Tokyo", "Gumi", "Toronto"];
+   const cities = ["Seoul", "Fukuoka", "Gumi", "Toronto"];
 
    const getCurrentLocation = () => {
       navigator.geolocation.getCurrentPosition(

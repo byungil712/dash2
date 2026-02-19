@@ -44,7 +44,7 @@ const findStart = (maze) => {
 
 const initialState = {
    currentLevel: 1,
-   maze: levels[1],
+   maze: levels[3],
    player: findStart(levels[1]),
    img: "./img/qqq.webp",
    steps: 0,
