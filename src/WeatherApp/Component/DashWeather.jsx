@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { forecastList, getWeatherByCity, weatherList } from "../Script/slice";
 import WeatherBox from "./WeatherBox";
@@ -12,7 +12,12 @@ const DashWeather = () => {
    const [currentLat, setCurrentLat] = useState(null);
    const [currentLon, setCurrentLon] = useState(null);
 
-   const cities = ["Seoul", "Fukuoka", "Gumi", "Toronto"];
+   const scrollRef = useRef(null);
+   const [isDragging, setIsDragging] = useState(false);
+   const [startY, setStartY] = useState(0);
+   const [scrollTop, setScrollTop] = useState(0);
+
+   const cities = ["Seoul", "Fukuoka", "Gumi"];
 
    const getCurrentLocation = () => {
       navigator.geolocation.getCurrentPosition(
@@ -60,8 +65,35 @@ const DashWeather = () => {
       dispatch(forecastList({ lat, lon }));
    };
 
+   /* 세로 스크롤 */
+   const handleMouseDown = (e) => {
+      setIsDragging(true);
+      setStartY(e.pageY - scrollRef.current.offsetTop);
+      setScrollTop(scrollRef.current.scrollTop);
+   };
+
+   const handleMouseMove = (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const y = e.pageY - scrollRef.current.offsetTop;
+      const walk = (y - startY) * 1; // 스크롤 속도
+      scrollRef.current.scrollTop = scrollTop - walk;
+   };
+
+   const handleMouseUp = () => {
+      setIsDragging(false);
+   };
+
    return (
-      <div className="dash_i">
+      <div
+         className="dash_i"
+         ref={scrollRef}
+         onMouseDown={handleMouseDown}
+         onMouseMove={handleMouseMove}
+         onMouseUp={handleMouseUp}
+         onMouseLeave={handleMouseUp}
+         style={{ cursor: isDragging ? "grabbing" : "grab" }}
+      >
          <div className="dash_lf">
             <form onSubmit={inputCity}>
                <input

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { playGame } from "../Script/gameSlice";
 import Box from "./Box";
@@ -15,8 +15,40 @@ const DashMiniGame = () => {
       dispatch(playGame(choice));
    };
 
+   const scrollRef = useRef(null);
+   const [isDragging, setIsDragging] = useState(false);
+   const [startY, setStartY] = useState(0);
+   const [scrollTop, setScrollTop] = useState(0);
+
+   /* 세로 스크롤 */
+   const handleMouseDown = (e) => {
+      setIsDragging(true);
+      setStartY(e.pageY - scrollRef.current.offsetTop);
+      setScrollTop(scrollRef.current.scrollTop);
+   };
+
+   const handleMouseMove = (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const y = e.pageY - scrollRef.current.offsetTop;
+      const walk = (y - startY) * 1; // 스크롤 속도
+      scrollRef.current.scrollTop = scrollTop - walk;
+   };
+
+   const handleMouseUp = () => {
+      setIsDragging(false);
+   };
+
    return (
-      <div className="dash_i">
+      <div
+         className="dash_i"
+         ref={scrollRef}
+         onMouseDown={handleMouseDown}
+         onMouseMove={handleMouseMove}
+         onMouseUp={handleMouseUp}
+         onMouseLeave={handleMouseUp}
+         style={{ cursor: isDragging ? "grabbing" : "grab" }}
+      >
          <div className="dash_lf">
             <div className="rock_game card">
                <div className="title">
@@ -34,9 +66,15 @@ const DashMiniGame = () => {
                   </div>
                </div>
                <div className="rock_btn">
-                  <button type="button" onClick={() => play("scissors")}>가위</button>
-                  <button type="button" onClick={() => play("rock")}>바위</button>
-                  <button type="button" onClick={() => play("paper")}>보</button>
+                  <button type="button" onClick={() => play("scissors")}>
+                     가위
+                  </button>
+                  <button type="button" onClick={() => play("rock")}>
+                     바위
+                  </button>
+                  <button type="button" onClick={() => play("paper")}>
+                     보
+                  </button>
                </div>
             </div>
             <Maze />

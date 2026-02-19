@@ -43,7 +43,7 @@ const WeatherBox = ({ cities, getCurrentLocation, handleCityChange }) => {
          {/* 도시 선택 */}
          <div className="city_selector card">
             <button type="button" onClick={() => handleCityChange("current")}>
-               현재위치
+               <span>현재위치</span>
             </button>
             {cities.map((city, idx) => (
                <button
@@ -51,7 +51,7 @@ const WeatherBox = ({ cities, getCurrentLocation, handleCityChange }) => {
                   key={idx}
                   onClick={() => handleCityChange(city)}
                >
-                  {city}
+                  <span>{city}</span>
                </button>
             ))}
          </div>
@@ -103,12 +103,12 @@ const WeatherBox = ({ cities, getCurrentLocation, handleCityChange }) => {
                </div>
             </div>
             <div className="info_rt">
-               <div className="weather_img">
+               
                   <img
-                     src={`https://openweathermap.org/img/wn/${weather?.weather[0].icon}@2x.png`}
+                     src={`https://openweathermap.org/img/wn/${weather?.weather[0].icon}@4x.png`}
                      alt="/"
                   />
-               </div>
+               
             </div>
          </div>
       </>
