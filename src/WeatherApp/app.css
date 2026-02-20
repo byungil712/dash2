@@ -283,15 +283,6 @@ body {
    font-size: 24px;
 }
 
-.dash_lf > .weather_info > .info_rt > .weather_img {
-   border-radius: 100%;
-   background-color: #bebebe;
-}
-
-.dash_lf > .weather_info > .info_rt > .weather_img > img {
-   padding: 8px;
-}
-
 .dash_rt {
    width: 100%;
    max-width: 416px;
@@ -523,6 +514,11 @@ body {
       padding: 12px;
    }
 
+   .dash_lf > .weather_info > .info_rt img {
+      width: 106px;
+      height: 106px;
+   }
+
    .dash_rt > .weekly_weather h3 {
       font-size: 20px;
    }
@@ -535,9 +531,10 @@ body {
    .dash_rt > .weekly_weather > .weekly_info > .info p {
       font-size: 16px;
    }
+
 }
 
-@media screen and (max-width: 537px) {
+@media screen and (max-width: 537px) {   
    .dash_rt > .weekly_weather > .weekly_info > .info {
       gap: 12px;
    }
@@ -581,8 +578,24 @@ body {
       font-size: 18px;
    }
 
+   .dash_lf > .weather_info > .info_rt img {
+      width: 86px;
+      height: 86px;
+   }
+
    .dash_rt > .weekly_weather h3 {
       font-size: 16px;
+   }
+}
+
+@media screen and(max-width:430px) {
+   .dash > .dash_i > .dash_lf > .city_selector {
+      gap: 8px;
+   }
+
+   .dash > .dash_i > .dash_lf > .city_selector > button {
+      font-size: 12px;
+      padding: 4px 2px;
    }
 }
 
@@ -599,15 +612,6 @@ body {
    .dash .menu ul li .icon {
       width: 34px;
       height: 34px;
-   }
-
-   .dash > .dash_i > .dash_lf > .city_selector {
-      gap: 8px;
-   }
-
-   .dash > .dash_i > .dash_lf > .city_selector > button {
-      font-size: 12px;
-      padding: 4px 2px;
    }
 
    .dash_rt > .weekly_weather > .weekly_info > .info img {

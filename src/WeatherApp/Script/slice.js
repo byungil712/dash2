@@ -8,28 +8,29 @@ let initialState = {
    error: null,
 };
 
-export const getWeatherEmoji = (iconCode) => {
-   const emojiMap = {
-      "01d": "☀️",      // 맑음 (낮)
-      "01n": "🌙",      // 맑음 (밤)
-      "02d": "⛅",      // 약간 구름 (낮)
-      "02n": "☁️",      // 약간 구름 (밤)
-      "03d": "☁️",      // 구름 많음
-      "03n": "☁️",
-      "04d": "☁️",      // 흐림
-      "04n": "☁️",
-      "09d": "🌧️",     // 소나기
-      "09n": "🌧️",
-      "10d": "🌦️",     // 비
-      "10n": "🌧️",
-      "11d": "⛈️",     // 천둥번개
-      "11n": "⛈️",
-      "13d": "❄️",      // 눈
-      "13n": "❄️",
-      "50d": "🌫️",     // 안개
-      "50n": "🌫️",
-   };
-   return emojiMap[iconCode] || "🌤️";
+export const weatherIcons = {
+      "01d": "./img/sun128.png",      // 맑음 (낮)
+      "01n": "./img/moon128.png",      // 맑음 (밤)
+      "02d": "./img/cloud_sun128.png",      // 약간 구름 (낮)
+      "02n": "./img/cloud_moon128.png",      // 약간 구름 (밤)
+      "03d": "./img/cloud128.png",      // 구름 많음
+      "03n": "./img/cloud128.png",
+      "04d": "./img/cloud128.png",      // 흐림
+      "04n": "./img/cloud128.png",
+      "09d": "./img/rain128.png",     // 소나기
+      "09n": "./img/rain128.png",
+      "10d": "./img/rain128.png",     // 비
+      "10n": "./img/rain128.png",
+      "11d": "./img/storm128.png",     // 천둥번개
+      "11n": "./img/storm128.png",
+      "13d": "./img/snow128.png",      // 눈
+      "13n": "./img/snow128.png",
+      "50d": "./img/fog128.png",     // 안개
+      "50n": "./img/fog128.png",
+};
+
+export const getWeatherIcon = (iconCode) => {
+   return weatherIcons[iconCode];
 };
 
 export const weatherList = createAsyncThunk(

@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getWeatherEmoji, weatherList } from "../Script/slice";
+import { getWeatherIcon, weatherList } from "../Script/slice";
 
-const WeatherBox = ({ cities, getCurrentLocation, handleCityChange}) => {
+const WeatherBox = ({ cities, getCurrentLocation, handleCityChange }) => {
    const dispatch = useDispatch();
    const { weather, forecast, loading, error } = useSelector(
       (state) => state.weather,
@@ -103,9 +103,10 @@ const WeatherBox = ({ cities, getCurrentLocation, handleCityChange}) => {
                </div>
             </div>
             <div className="info_rt">
-                  <span style={{ fontSize: "100px" }}>
-   {getWeatherEmoji(weather?.weather[0]?.icon)}
-</span>
+               <img
+                  src={getWeatherIcon(weather?.weather[0]?.icon)}
+                  alt={weather?.weather[0]?.description}
+               />
             </div>
          </div>
       </>
