@@ -1,6 +1,4 @@
-// src/Script/mazeSlice.js
 import { createSlice } from "@reduxjs/toolkit";
-import { icon } from "leaflet";
 
 // 미로 맵 (0: 길, 1: 벽, 2: 시작, 3: 도착)
 const levels = {
@@ -44,9 +42,9 @@ const findStart = (maze) => {
 
 const initialState = {
    currentLevel: 1,
-   maze: levels[3],
+   maze: levels[1],
    player: findStart(levels[1]),
-   img: "./img/qqq.webp",
+   image: "./img/qqq.webp",
    steps: 0,
    isCompleted: false,
    time: 0,

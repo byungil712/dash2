@@ -16,19 +16,19 @@ const DashMiniGame = () => {
    };
 
    const scrollRef = useRef(null);
-   const [isDragging, setIsDragging] = useState(false);
+   const [totalDragging, setTotalDragging] = useState(false);
    const [startY, setStartY] = useState(0);
    const [scrollTop, setScrollTop] = useState(0);
 
    /* 세로 스크롤 */
    const handleMouseDown = (e) => {
-      setIsDragging(true);
+      setTotalDragging(true);
       setStartY(e.pageY - scrollRef.current.offsetTop);
       setScrollTop(scrollRef.current.scrollTop);
    };
 
    const handleMouseMove = (e) => {
-      if (!isDragging) return;
+      if (!totalDragging) return;
       e.preventDefault();
       const y = e.pageY - scrollRef.current.offsetTop;
       const walk = (y - startY) * 1; // 스크롤 속도
@@ -36,7 +36,7 @@ const DashMiniGame = () => {
    };
 
    const handleMouseUp = () => {
-      setIsDragging(false);
+      setTotalDragging(false);
    };
 
    return (
@@ -47,7 +47,7 @@ const DashMiniGame = () => {
          onMouseMove={handleMouseMove}
          onMouseUp={handleMouseUp}
          onMouseLeave={handleMouseUp}
-         style={{ cursor: isDragging ? "grabbing" : "grab" }}
+         style={{ cursor: totalDragging ? "grabbing" : "grab" }}
       >
          <div className="dash_lf">
             <div className="rock_game card">

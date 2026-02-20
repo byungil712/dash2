@@ -116,7 +116,7 @@ const WeatherBox2 = ({ handleMapLocationChange, currentLat, currentLon }) => {
                      </div>
                      <p>{day.weather.main}</p>
                      <span>
-                        최고: {day.tempMax} / 최저: {day.tempMin}
+                        {day.tempMax} / {day.tempMin}
                      </span>
                   </div>
                ))}
