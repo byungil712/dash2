@@ -102,6 +102,7 @@ const Maze = () => {
                            onClick={() =>
                               dispatch(changeLevel(currentLevel + 1))
                            }
+                           autoFocus
                         >
                            다음 레벨
                         </button>

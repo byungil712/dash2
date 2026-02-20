@@ -56,7 +56,6 @@ const Number = () => {
                min="1"
                max="10"
                className="number-input"
-               autoFocus
             />
          </form>
       </div>

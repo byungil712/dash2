@@ -25,7 +25,8 @@
    margin-top: 16px;
 }
 
-.dash_lf > .rock_game > .main_game > .user > .box {
+.dash_lf > .rock_game > .main_game > .user > .box,
+.dash_lf > .rock_game > .main_game > .com > .box {
    display: flex;
    flex-direction: column;
    gap: 8px;
@@ -294,9 +295,9 @@
    border-radius: 16px;
 }
 
-.title h1 {
-   color: #2c3e50;
+.tictactoe_game > .title > h3 {
    font-size: 24px;
+   font-weight: 700;
 }
 
 .tictactoe_flex {
@@ -493,4 +494,145 @@
 .number_game > .input_form > input {
    background-color: #fff;
    border-radius: 16px;
+}
+
+@media screen and (max-width: 1200px) {
+   .dash_lf > .rock_game > .main_game > .user > .box > h3,
+   .dash_lf > .rock_game > .main_game > .com > .box > h3,
+   .dash_lf > .rock_game > .main_game > .user > .box > h2,
+   .dash_lf > .rock_game > .main_game > .com > .box > h2 {
+      font-size: 20px;
+   }
+
+   .tictactoe_game > .tictactoe_flex > .tictactoe_btn {
+      margin-top: 16px;
+   }
+
+   .tictactoe_game > .tictactoe_flex > .tictactoe_btn > .turn > p {
+      font-size: 18px;
+   }
+}
+
+@media screen and (max-width: 650px) {
+   .dash_lf > .rock_game > .title > h3 {
+      font-size: 22px;
+   }
+
+   .dash_lf > .rock_game > .main_game > .user > .box > h3,
+   .dash_lf > .rock_game > .main_game > .com > .box > h3,
+   .dash_lf > .rock_game > .main_game > .user > .box > h2,
+   .dash_lf > .rock_game > .main_game > .com > .box > h2 {
+      font-size: 18px;
+   }
+
+   .maze_game > .title > h3 {
+      font-size: 22px;
+   }
+
+   .tictactoe_game > .title > h3 {
+      font-size: 22px;
+   }
+
+   .tictactoe_game > .tictactoe_flex > .tictactoe_btn {
+      margin-top: 16px;
+   }
+
+   .tictactoe_game > .tictactoe_flex > .tictactoe_btn > .turn > span {
+      font-size: 18px;
+   }
+
+   .number_game > .title > h3 {
+      font-size: 22px;
+   }
+}
+
+@media screen and (max-width: 575px) {
+   .dash_lf > .rock_game > .title > h3 {
+      font-size: 20px;
+   }
+
+   .dash_lf > .rock_game > .main_game > .user > .box > h3,
+   .dash_lf > .rock_game > .main_game > .com > .box > h3,
+   .dash_lf > .rock_game > .main_game > .user > .box > h2,
+   .dash_lf > .rock_game > .main_game > .com > .box > h2 {
+      font-size: 16px;
+   }
+
+   .maze_game > .title > h3 {
+      font-size: 20px;
+   }
+
+   .tictactoe_game > .title > h3 {
+      font-size: 20px;
+   }
+
+   .tictactoe_game > .tictactoe_flex > .tictactoe_btn > .turn > span {
+      font-size: 16px;
+   }
+
+   .number_game h4 {
+      font-size: 16px;
+   }
+}
+
+@media screen and (max-width: 537px) {
+   .maze_cell {
+      width: 27px;
+      height: 27px;
+   }
+}
+
+@media screen and (max-width: 500px) {
+   .dash_lf > .rock_game > .title > h3 {
+      font-size: 18px;
+   }
+
+   .dash_lf > .rock_game > .main_game > .user > .box > h3,
+   .dash_lf > .rock_game > .main_game > .com > .box > h3,
+   .dash_lf > .rock_game > .main_game > .user > .box > h2,
+   .dash_lf > .rock_game > .main_game > .com > .box > h2 {
+      font-size: 14px;
+   }
+
+   .maze_game > .title > h3 {
+      font-size: 18px;
+   }
+
+   .tictactoe_game > .title > h3 {
+      font-size: 18px;
+   }
+
+   .tictactoe_game > .tictactoe_flex > .tictactoe_btn > .turn > p {
+      font-size: 14px;
+   }
+
+   .number_game > .clear_game > h3 {
+      font-size: 16px;
+   }
+
+   .number_game span,
+   .number_game h4 {
+      font-size: 14px;
+   }
+
+   .number_game input {
+      font-size: 14px;
+   }
+}
+
+@media screen and (max-width: 400px) {
+   .maze_cell {
+      width: 17px;
+      height: 17px;
+   }
+
+   .board > .cell {
+      width: 55px;
+      height: 55px;
+   }
+
+   .tictactoe_flex > .tictactoe_btn {
+      max-width: 180px;
+      gap: 4px;
+   }
 }

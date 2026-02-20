@@ -371,7 +371,7 @@ body {
    border-radius: 16px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
    .dash {
       max-width: 740px;
       max-height: 921px;
@@ -558,20 +558,21 @@ body {
       padding: 12px 4px;
    }
 
-   .dash_lf > .weather_info > .info_lf > .info > h3 {
-      font-size: 20px;
+   .dash_lf > .weather_info > .info_lf h3 {
+      font-size: 28px;
+      font-weight: 700;
    }
 
    .dash_lf > .weather_info > .info_lf > .info > p {
-      font-size: 16px;
+      font-size: 14px;
    }
 
    .dash_lf > .weather_info > .info_lf > .info > p:first-child {
-      font-size: 20px;
+      font-size: 18px;
    }
 
    .dash_rt > .weekly_weather h3 {
-      font-size: 18px;
+      font-size: 16px;
    }
 }
 
@@ -583,5 +584,30 @@ body {
    .dash > .dash_i > .dash_lf > .city_selector > button {
       font-size: 12px;
       padding: 4px 2px;
+   }
+
+   .dash_rt > .weekly_weather > .weekly_info > .info img {
+      max-width: 38px;
+      max-height: 38px;
+   }
+
+   .dash_rt > .weekly_weather > .weekly_info > .info {
+      gap: 4px;
+   }
+
+   .dash_lf > .weather_info > .info_lf > .info h3 {
+      font-size: 18px;
+   }
+
+   .dash_lf > .weather_info > .info_lf > .info > p {
+      font-size: 14px;
+   }
+
+   .dash_lf > .weather_info > .info_lf > .info > p:first-child {
+      font-size: 18px;
+   }
+
+   .dash_rt > .weekly_weather h3 {
+      font-size: 18px;
    }
 }

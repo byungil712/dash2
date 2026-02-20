@@ -29,7 +29,7 @@ const TicTacToe = () => {
    return (
       <div className="tictactoe_game card">
          <div className="title">
-            <h1>틱택토 ❌⭕</h1>
+            <h3>틱택토 ❌⭕</h3>
          </div>
          <div className="tictactoe_flex">
             <div className="tictactoe_btn">

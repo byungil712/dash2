@@ -39,6 +39,24 @@ const DashMiniGame = () => {
       setTotalDragging(false);
    };
 
+   /* 모바일 세로 스크롤 */
+   const handleTouchStart = (e) => {
+      setTotalDragging(true);
+      setStartY(e.touches[0].clientY - scrollRef.current.offsetLeft);
+      setScrollTop(scrollRef.current.scrollTop);
+   };
+
+   const handleTouchMove = (e) => {
+      if (!totalDragging) return;
+      const y = e.touches[0].clientY - scrollRef.current.offsetLeft;
+      const walk = (y - startY) * 1;
+      scrollRef.current.scrollTop = scrollTop - walk;
+   };
+
+   const handleTouchEnd = () => {
+      setTotalDragging(false);
+   };
+
    return (
       <div
          className="dash_i"
@@ -47,6 +65,9 @@ const DashMiniGame = () => {
          onMouseMove={handleMouseMove}
          onMouseUp={handleMouseUp}
          onMouseLeave={handleMouseUp}
+         onTouchStart={handleTouchStart}
+         onTouchMove={handleTouchMove}
+         onTouchEnd={handleTouchEnd}
          style={{ cursor: totalDragging ? "grabbing" : "grab" }}
       >
          <div className="dash_lf">
