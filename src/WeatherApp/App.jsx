@@ -4,8 +4,8 @@ import { Link, Route, Routes } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
    faCloudSun,
-   faGamepad,
    faMoon,
+   faDice,
 } from "@fortawesome/free-solid-svg-icons";
 import DashWeather from "./Component/DashWeather";
 import DashMiniGame from "./Component/DashMiniGame";
@@ -25,6 +25,12 @@ const App = () => {
 
    return (
       <div className="container">
+         <div className="mode" onClick={() => dispatch(toggleTheme())}>
+            <FontAwesomeIcon icon={faMoon} className="icon" />
+            <div className="mode_btn">
+               <span className="circle"></span>
+            </div>
+         </div>
          <div className="dash">
             <nav className="menu">
                <ul>
@@ -36,13 +42,9 @@ const App = () => {
                   </li>
                   <li>
                      <Link to="./DashMiniGame" className="link">
-                        <FontAwesomeIcon icon={faGamepad} className="icon" />
+                        <FontAwesomeIcon icon={faDice} className="icon" />
                         <span>MiniGame</span>
                      </Link>
-                  </li>
-                  <li onClick={() => dispatch(toggleTheme())}>
-                     <FontAwesomeIcon icon={faMoon} className="icon" />
-                     <span>{mode === "dark" ? "Dark" : "Light"}Mode</span>
                   </li>
                </ul>
             </nav>

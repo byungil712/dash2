@@ -32,6 +32,17 @@ body.dark_mode{
    background-color: var(--bg-primary);
 }
 
+body.dark_mode .container > .mode > .mode_btn{
+   justify-content: flex-end;
+}
+
+body.dark_mode .container > .mode > .mode_btn > .circle{
+   width: 24px;
+   height: 24px;
+   background-color: var(--text-primary);
+   border-radius: 100%;
+}
+
 body.dark_mode .dash{
    background-color: var(--bg-secondary);
 }

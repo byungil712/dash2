@@ -49,7 +49,7 @@ a {
    color: inherit;
 }
 
-span{
+span {
    font-family: "NotoSansKR-Bold";
 }
 
@@ -88,10 +88,48 @@ body {
 .container {
    height: 100vh;
    display: flex;
+   flex-direction: column;
    justify-content: center;
    align-items: center;
+   gap: 8px;
    padding: 16px;
    background-color: var(--bg-primary);
+}
+
+.container > .mode {
+   width: 100%;
+   height: 50px;
+   max-width: 1196px;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   gap: 8px;
+}
+
+.container > .mode > .icon {
+   width: 26px;
+   height: 26px;
+   color: var(--text-primary);
+}
+
+.container > .mode > .mode_btn {
+   width: 90px;
+   height: 32px;
+   background-color: var(--bg-primary);
+   border: 1px solid var(--border-color);
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   border-radius: 16px;
+   padding: 16px 8px;
+   transition: background 0.5s;
+}
+
+.container > .mode > .mode_btn > .circle {
+   width: 24px;
+   height: 24px;
+   background-color: var(--text-primary);
+   border-radius: 100%;
 }
 
 .dash {
@@ -150,6 +188,11 @@ body {
    transform: rotate(20deg);
 }
 
+.dash .menu ul li:first-child .icon path{
+   width: 33px;
+   height: 11px;
+}
+
 .dash > .dash_i {
    width: calc(100% - 160px);
    height: 100%;
@@ -175,7 +218,6 @@ body {
 
 .dash > .dash_i input::placeholder {
    color: #afafaf;
-   
 }
 
 .dash > .dash_i > .dash_lf {
@@ -382,9 +424,13 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
+   .container > .mode {
+      max-width: 740px;
+   }
+
    .dash {
       max-width: 740px;
-      max-height: 921px;
+      max-height: 841px;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
@@ -399,11 +445,13 @@ body {
       justify-content: center;
       align-items: center;
       margin: 0;
+      background-color: var(--bg-tertiary);
+      border-radius: 16px;
    }
 
    .dash .menu ul {
       flex-direction: row;
-      gap: 24px;
+      gap: 38px;
    }
 
    .dash > .dash_i {
@@ -421,8 +469,8 @@ body {
    }
 
    .dash .menu ul li .icon {
-      width: 54px;
-      height: 54px;
+      width: 46px;
+      height: 46px;
    }
 
    .dash > .dash_i input {
@@ -487,8 +535,8 @@ body {
 
 @media screen and (max-width: 650px) {
    .dash .menu ul li .icon {
-      width: 48px;
-      height: 48px;
+      width: 42px;
+      height: 42px;
    }
 
    .dash > .dash_i input {
@@ -569,8 +617,8 @@ body {
 
 @media screen and (max-width: 500px) {
    .dash .menu ul li .icon {
-      width: 44px;
-      height: 44px;
+      width: 38px;
+      height: 38px;
    }
 
    .dash > .dash_i > .dash_lf > .city_selector > button {
@@ -601,9 +649,9 @@ body {
    }
 }
 
-@media screen and (max-width:430px) {
+@media screen and (max-width: 430px) {
    .dash > .dash_i > .dash_lf > .city_selector {
-      padding: 16px 8px ;
+      padding: 16px 8px;
       gap: 8px;
    }
 
