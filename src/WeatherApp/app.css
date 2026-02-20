@@ -283,6 +283,10 @@ body {
    font-size: 24px;
 }
 
+.dash_lf > .weather_info > .info_rt img:hover {
+   animation: bounce 1s infinite;
+}
+
 .dash_rt {
    width: 100%;
    max-width: 416px;
@@ -365,6 +369,11 @@ body {
    transform: translate(-50%, -50%);
    width: calc(100% - 32px);
    border-radius: 16px;
+}
+
+.map_container .leaflet-control-zoom a {
+   background-color: #3498db;
+   color: #fff;
 }
 
 @media screen and (max-width: 1200px) {
@@ -531,10 +540,9 @@ body {
    .dash_rt > .weekly_weather > .weekly_info > .info p {
       font-size: 16px;
    }
-
 }
 
-@media screen and (max-width: 537px) {   
+@media screen and (max-width: 537px) {
    .dash_rt > .weekly_weather > .weekly_info > .info {
       gap: 12px;
    }

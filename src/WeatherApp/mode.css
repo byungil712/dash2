@@ -111,7 +111,6 @@ body.dark_mode .card .clear_popup p{
    color: var(--text-secondary);
 }
 
-body.dark_mode .map_container span,
 body.dark_mode .map_container a{
    color: var(--text-secondary);
 }

@@ -1,14 +1,10 @@
 import React, { useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-   movePlayer,
-   changeLevel,
-   resetGame,
-} from "../Script/mazeSlice";
+import { movePlayer, changeLevel, resetGame } from "../Script/mazeSlice";
 
 const Maze = () => {
    const dispatch = useDispatch();
-   const { maze, player, image, isCompleted, currentLevel } = useSelector(
+   const { maze, player, isCompleted, currentLevel } = useSelector(
       (state) => state.maze,
    );
 
@@ -78,7 +74,7 @@ const Maze = () => {
 
                      return (
                         <div key={colIndex} className={cellClass}>
-                           <img src={isPlayer && image} />
+                           {isPlayer && "🐧"}
                            {cell === 3 && !isPlayer && "🏁"}
                         </div>
                      );

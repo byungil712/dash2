@@ -258,9 +258,8 @@
 
 .control_row {
    display: flex;
-   gap: 10px;
+   gap: 16px;
    justify-content: center;
-   margin-bottom: 10px;
 }
 
 .mobile_controls button {
@@ -513,6 +512,31 @@
    }
 }
 
+@media screen and (max-width: 1024px) {
+
+   .maze_game {
+      width: 100%;
+      height: 100%;
+      max-height: 470px;
+   }
+
+   .mobile_controls {
+      display: block;
+   }
+
+   .mobile_controls button {
+      width: 46px;
+      height: 46px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+
+   .tictactoe_game{
+      margin-top: 56px;
+   }
+}
+
 @media screen and (max-width: 650px) {
    .dash_lf > .rock_game > .title > h3 {
       font-size: 22px;
@@ -527,6 +551,10 @@
 
    .maze_game > .title > h3 {
       font-size: 22px;
+   }
+
+   .tictactoe_game{
+      margin-top: 44px;
    }
 
    .tictactoe_game > .title > h3 {
@@ -562,6 +590,18 @@
       font-size: 20px;
    }
 
+   .clear_popup h2{
+      font-size: 20px;
+   }
+
+   .clear_popup p{
+      font-size: 16px;
+   }
+
+   .tictactoe_game{
+      margin-top: 32px;
+   }
+
    .tictactoe_game > .title > h3 {
       font-size: 20px;
    }
@@ -576,9 +616,22 @@
 }
 
 @media screen and (max-width: 537px) {
+   .dash_lf > .rock_game > .main_game > .vs {
+      font-size: 24px;
+   }
+
+   .dash_lf > .rock_game > .main_game img {
+      width: 72px;
+      height: 72px;
+   }
+
    .maze_cell {
       width: 27px;
       height: 27px;
+   }
+
+   .tictactoe_game{
+      margin-top: 0;
    }
 }
 
@@ -596,6 +649,18 @@
 
    .maze_game > .title > h3 {
       font-size: 18px;
+   }
+
+   .clear_popup button{
+      font-size: 14px;
+   }
+
+   .mobile_controls button {
+      width: 46px;
+      height: 46px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
    }
 
    .tictactoe_game > .title > h3 {
@@ -621,9 +686,28 @@
 }
 
 @media screen and (max-width: 400px) {
+   .maze_board {
+      padding: 12px;
+   }
+
    .maze_cell {
-      width: 17px;
-      height: 17px;
+      width: 19px;
+      height: 19px;
+   }
+
+   .maze_cell.player {
+      background: #f39c12;
+      transform: scale(1.1);
+      z-index: 10;
+      animation: bounce 0.3s;
+   }
+
+   .mobile_controls button {
+      width: 38px;
+      height: 38px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
    }
 
    .board > .cell {
