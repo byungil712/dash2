@@ -49,6 +49,10 @@ a {
    color: inherit;
 }
 
+span{
+   font-family: "NotoSansKR-Bold";
+}
+
 img {
    display: block;
    max-width: 100%;
@@ -171,6 +175,7 @@ body {
 
 .dash > .dash_i input::placeholder {
    color: #afafaf;
+   
 }
 
 .dash > .dash_i > .dash_lf {
@@ -596,14 +601,15 @@ body {
    }
 }
 
-@media screen and(max-width:430px) {
+@media screen and (max-width:430px) {
    .dash > .dash_i > .dash_lf > .city_selector {
+      padding: 16px 8px ;
       gap: 8px;
    }
 
    .dash > .dash_i > .dash_lf > .city_selector > button {
-      font-size: 12px;
-      padding: 4px 2px;
+      font-size: 14px;
+      padding: 12px 4px;
    }
 }
 

@@ -513,7 +513,6 @@
 }
 
 @media screen and (max-width: 1024px) {
-
    .maze_game {
       width: 100%;
       height: 100%;
@@ -532,7 +531,7 @@
       align-items: center;
    }
 
-   .tictactoe_game{
+   .tictactoe_game {
       margin-top: 56px;
    }
 }
@@ -553,7 +552,7 @@
       font-size: 22px;
    }
 
-   .tictactoe_game{
+   .tictactoe_game {
       margin-top: 44px;
    }
 
@@ -590,15 +589,15 @@
       font-size: 20px;
    }
 
-   .clear_popup h2{
+   .clear_popup h2 {
       font-size: 20px;
    }
 
-   .clear_popup p{
+   .clear_popup p {
       font-size: 16px;
    }
 
-   .tictactoe_game{
+   .tictactoe_game {
       margin-top: 32px;
    }
 
@@ -630,7 +629,7 @@
       height: 27px;
    }
 
-   .tictactoe_game{
+   .tictactoe_game {
       margin-top: 0;
    }
 }
@@ -651,7 +650,7 @@
       font-size: 18px;
    }
 
-   .clear_popup button{
+   .clear_popup button {
       font-size: 14px;
    }
 
@@ -682,6 +681,16 @@
 
    .number_game input {
       font-size: 14px;
+   }
+}
+
+@media screen and (max-width: 430px) {
+   .clear_popup {
+      padding: 24px;
+   }
+
+   .clear_popup button {
+      font-size: 12px;
    }
 }
 

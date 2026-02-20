@@ -43,7 +43,7 @@ const WeatherBox = ({ cities, getCurrentLocation, handleCityChange }) => {
          {/* 도시 선택 */}
          <div className="city_selector card">
             <button type="button" onClick={() => handleCityChange("current")}>
-               <span>현재위치</span>
+               <span>내위치</span>
             </button>
             {cities.map((city, idx) => (
                <button
