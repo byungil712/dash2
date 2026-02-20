@@ -73,7 +73,7 @@ const DashWeather = () => {
    };
 
    const handleMouseMove = (e) => {
-      if (!isDragging) return;
+      if (!totalDragging) return;
       e.preventDefault();
       const y = e.pageY - scrollRef.current.offsetTop;
       const walk = (y - startY) * 1; // 스크롤 속도

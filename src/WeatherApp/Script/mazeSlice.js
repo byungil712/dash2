@@ -44,7 +44,7 @@ const initialState = {
    currentLevel: 1,
    maze: levels[1],
    player: findStart(levels[1]),
-   image: "./img/qqq.webp",
+   image: "./img/www.webp",
    steps: 0,
    isCompleted: false,
    time: 0,
