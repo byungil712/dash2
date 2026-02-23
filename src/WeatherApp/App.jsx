@@ -47,14 +47,14 @@ const App = () => {
             <nav className="menu">
                <ul>
                   <li>
-                     <Link to="/">
+                     <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>
                         <FontAwesomeIcon icon={faCloudSun} className="icon" />
-                     </Link>
+                     </NavLink>
                   </li>
                   <li>
-                     <Link to="./DashMiniGame" className="link">
+                     <NavLink to="./DashMiniGame" className={({ isActive }) => isActive ? "active" : ""}>
                         <FontAwesomeIcon icon={faDice} className="icon" />
-                     </Link>
+                     </NavLink>
                   </li>
                </ul>
             </nav>

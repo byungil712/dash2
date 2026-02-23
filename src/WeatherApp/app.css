@@ -179,8 +179,7 @@ body {
 }
 
 .container > .top_menu > .menu_t > ul > li > a.active > .icon{
-   width: 32px;
-   height: 32px;
+   font-size: 32px;
    color: var(--text-primary);
 }
 
@@ -230,9 +229,13 @@ body {
    gap: 8px;
 }
 
+.dash .menu ul li a.active .icon {
+   font-size: 42px;
+   color: var(--text-primary);
+}
+
 .dash .menu ul li .icon {
-   width: 42px;
-   height: 42px;
+   font-size: 38px;
    cursor: pointer;
    transition: transform 0.3s ease;
    color: #ffc344;
