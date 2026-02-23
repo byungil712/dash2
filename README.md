@@ -1,16 +1,46 @@
-# React + Vite
+# 대시보드 UI를 활용한 날씨앱과 간단한 미니게임
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 주요 기능
+- 실시간 날찌 조회 (현재 위치또는 원하는 나라를 검색또는 나라 버튼)
+- 3시간 단위의 날씨예보 대시보드 UI를 활용한 날씨앱과 간단한 미니게임
 
-Currently, two official plugins are available:
+## 주요 기능
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 날씨 관련
+- 실시간 날찌 조회 (현재 위치또는 원하는 나라를 검색또는 나라 버튼)
+- 3시간 단위의 날씨 예보
+- 5일간의 주간 날씨 예보
+- 지도 클릭으로 원하는 나라의 날씨 확
 
-## React Compiler
+### 미니게임
+- 가위바위보 / AI대전
+- 미로게임
+- 틱택토 / AI대전
+- 숫자 맞추기 (0 - 10) 추측 게임
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 기타
+- 라이트모드 / 다크모드 변경
+- 반응형 디자인
 
-## Expanding the ESLint configuration
+## 기술 스택
+- React
+- Redux
+- JavaScript
+- CSS3
+- OpenWeatherMap Api
+- React Leaflet
+- Font Awesome
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 프로젝트 구조
+dash/
+├ public/
+│  └ img/
+│    └ cloud_moon128.png
+│    └ cloud_sun128.png
+│    └ cloud128.png
+│    └ fog128.png
+│    └ ...
+│
+├ src/
+│  └
+
