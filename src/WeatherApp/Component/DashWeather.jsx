@@ -32,7 +32,7 @@ const DashWeather = () => {
          },
       );
    };
-
+   
    useEffect(() => {
       if (citys === "") {
          getCurrentLocation();

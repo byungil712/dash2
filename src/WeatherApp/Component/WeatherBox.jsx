@@ -7,14 +7,15 @@ const WeatherBox = ({ cities, getCurrentLocation, handleCityChange }) => {
    const { weather, forecast, loading, error } = useSelector(
       (state) => state.weather,
    );
-
+   
    const scrollRef = useRef(null);
    const [isDragging, setIsDragging] = useState(false);
    const [startX, setStartX] = useState(0);
    const [scrollLeft, setScrollLeft] = useState(0);
-
+   
    useEffect(() => getCurrentLocation(), []);
 
+   
    useEffect(() => {
       dispatch(weatherList());
    }, [dispatch]);

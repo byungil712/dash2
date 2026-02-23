@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, NavLink, Route, Routes } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloudSun, faMoon, faDice } from "@fortawesome/free-solid-svg-icons";
 import DashWeather from "./Component/DashWeather";
@@ -31,14 +31,14 @@ const App = () => {
             <div className="menu_t">
                <ul>
                   <li>
-                     <Link to="/">
+                     <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>
                         <FontAwesomeIcon icon={faCloudSun} className="icon"/>
-                     </Link>
+                     </NavLink>
                   </li>
                   <li>
-                     <Link to="./DashMiniGame" className="link">
+                     <NavLink to="./DashMiniGame" className={({ isActive }) => isActive ? "active" : ""}>
                         <FontAwesomeIcon icon={faDice} className="icon" />
-                     </Link>
+                     </NavLink>
                   </li>
                </ul>
             </div>

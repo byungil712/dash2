@@ -28,6 +28,8 @@ const WeatherBox2 = ({ handleMapLocationChange, currentLat, currentLon }) => {
          },
       );
    };
+   
+   
 
    useEffect(() => {
       getCurrentLocation();
