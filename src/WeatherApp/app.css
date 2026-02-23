@@ -143,7 +143,7 @@ body {
    background-color: var(--bg-secondary);
    border-radius: 16px;
    padding: 16px 0;
-   padding-right: 21px;
+   padding-right: 16px;
 }
 
 .dash .menu {
@@ -338,7 +338,7 @@ body {
 
 .dash_rt {
    width: 100%;
-   max-width: 416px;
+   max-width: 426px;
    min-width: 0;
    display: flex;
    flex-direction: column;
@@ -704,14 +704,4 @@ body {
    }
 }
 
-@media screen and (max-height:720px) {
-   .dash {
-      max-height: 601px;
-   }
-}
 
-@media screen and (max-height:650px) {
-   .dash {
-      max-height: 525px;
-   }
-}
