@@ -2,11 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Route, Routes } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-   faCloudSun,
-   faMoon,
-   faDice,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCloudSun, faMoon, faDice } from "@fortawesome/free-solid-svg-icons";
 import DashWeather from "./Component/DashWeather";
 import DashMiniGame from "./Component/DashMiniGame";
 import "./app.css";
@@ -25,10 +21,26 @@ const App = () => {
 
    return (
       <div className="container">
-         <div className="mode" onClick={() => dispatch(toggleTheme())}>
-            <FontAwesomeIcon icon={faMoon} className="icon" />
-            <div className="mode_btn">
-               <span className="circle"></span>
+         <div className="top_menu">
+            <div className="mode_btn" onClick={() => dispatch(toggleTheme())}>
+               <FontAwesomeIcon icon={faMoon} className="icon" />
+               <div className="circle_btn">
+                  <span className="circle"></span>
+               </div>
+            </div>
+            <div className="menu_t">
+               <ul>
+                  <li>
+                     <Link to="/">
+                        <FontAwesomeIcon icon={faCloudSun} className="icon"/>
+                     </Link>
+                  </li>
+                  <li>
+                     <Link to="./DashMiniGame" className="link">
+                        <FontAwesomeIcon icon={faDice} className="icon" />
+                     </Link>
+                  </li>
+               </ul>
             </div>
          </div>
          <div className="dash">
@@ -37,13 +49,11 @@ const App = () => {
                   <li>
                      <Link to="/">
                         <FontAwesomeIcon icon={faCloudSun} className="icon" />
-                        <span>Weather</span>
                      </Link>
                   </li>
                   <li>
                      <Link to="./DashMiniGame" className="link">
                         <FontAwesomeIcon icon={faDice} className="icon" />
-                        <span>MiniGame</span>
                      </Link>
                   </li>
                </ul>

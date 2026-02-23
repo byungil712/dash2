@@ -92,12 +92,12 @@ body {
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   gap: 8px;
+   gap: 16px;
    padding: 16px;
    background-color: var(--bg-primary);
 }
 
-.container > .mode {
+.container > .top_menu {
    width: 100%;
    height: 34px;
    max-width: 1196px;
@@ -105,16 +105,23 @@ body {
    justify-content: flex-end;
    align-items: center;
    gap: 8px;
+   padding-top: 16px;
 }
 
-.container > .mode > .icon {
+.container > .top_menu > .mode_btn {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+}
+
+.container > .top_menu > .mode_btn > .icon {
    width: 26px;
    height: 26px;
    color: var(--text-primary);
 }
 
-.container > .mode > .mode_btn {
-   width: 90px;
+.container > .top_menu > .mode_btn > .circle_btn {
+   width: 80px;
    height: 32px;
    background-color: var(--bg-primary);
    border: 1px solid var(--border-color);
@@ -126,11 +133,55 @@ body {
    transition: background 0.5s;
 }
 
-.container > .mode > .mode_btn > .circle {
+.container > .top_menu > .mode_btn > .circle_btn > .circle {
    width: 24px;
    height: 24px;
    background-color: var(--text-primary);
    border-radius: 100%;
+}
+
+.container > .top_menu > .menu_t {
+   display: none;
+   order: -1;
+}
+
+.container > .top_menu > .menu_t > ul {
+   display: flex;
+}
+
+.container > .top_menu > .menu_t > ul > li {
+   width: 64px;
+   height: 64px;
+   background-color: var(--bg-secondary);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 6px;
+}
+
+.container > .top_menu > .menu_t > ul > li{
+   border-top-left-radius: 16px;
+}
+
+.container > .top_menu > .menu_t > ul > li:last-child{
+   border-top-left-radius: 0;
+   border-top-right-radius: 16px;
+}
+
+.container > .top_menu > .menu_t > ul > li .icon {
+   font-size: 28px;
+   color: #ffc344;
+}
+
+.container > .top_menu > .menu_t > ul > li:last-child .icon {
+   font-size: 28px;
+   color: #3498db;
+}
+
+.container > .top_menu > .menu_t > ul > li:hover .icon{
+   width: 32px;
+   height: 32px;
+   color: var(--text-primary);
 }
 
 .dash {
@@ -141,7 +192,7 @@ body {
    display: flex;
    justify-content: space-between;
    background-color: var(--bg-secondary);
-   border-radius: 16px;
+   border-radius: 32px;
    padding: 16px 0;
    padding-right: 16px;
 }
@@ -161,6 +212,7 @@ body {
 
 .dash .menu ul li {
    display: flex;
+   justify-content: center;
    align-items: center;
    font-size: 16px;
    font-weight: 700;
@@ -179,10 +231,15 @@ body {
 }
 
 .dash .menu ul li .icon {
-   width: 36px;
-   height: 36px;
+   width: 42px;
+   height: 42px;
    cursor: pointer;
    transition: transform 0.3s ease;
+   color: #ffc344;
+}
+
+.dash .menu ul li:last-child .icon {
+   color: #3498db;
 }
 
 .menu ul li:hover .icon {
@@ -214,7 +271,7 @@ body {
    font-size: 14px;
    font-weight: 700;
    border: none;
-   border-radius: 16px;
+   border-radius: 8px;
 }
 
 .dash > .dash_i input::placeholder {
@@ -238,7 +295,7 @@ body {
    display: flex;
    justify-content: flex-start;
    gap: 16px;
-   border-radius: 16px;
+   border-radius: 8px;
 }
 
 .dash > .dash_i > .dash_lf > .city_selector > button {
@@ -258,7 +315,7 @@ body {
    max-height: 218px;
    min-width: 0;
    background-color: #ededed;
-   border-radius: 16px;
+   border-radius: 8px;
    padding-right: 16px;
 }
 
@@ -286,7 +343,7 @@ body {
    justify-content: space-between;
    align-items: center;
    background-color: #d5d5d5;
-   border-radius: 16px;
+   border-radius: 8px;
    padding: 16px;
 }
 
@@ -303,7 +360,7 @@ body {
    justify-content: space-between;
    align-items: center;
    padding: 24px;
-   border-radius: 16px;
+   border-radius: 8px;
 }
 
 .dash_lf > .weather_info > .info_lf {
@@ -350,7 +407,7 @@ body {
    height: 100%;
    max-height: 389px;
    background-color: #ededed;
-   border-radius: 16px;
+   border-radius: 8px;
    padding: 16px;
    display: flex;
    flex-direction: column;
@@ -381,7 +438,7 @@ body {
    align-items: center;
    gap: 16px;
    background-color: #d5d5d5;
-   border-radius: 16px;
+   border-radius: 8px;
    padding: 10px 16px;
    margin-bottom: 16px;
 }
@@ -406,7 +463,7 @@ body {
 .dash_rt > .map_container {
    height: 291px;
    background-color: #ededed;
-   border-radius: 16px;
+   border-radius: 8px;
    position: relative;
 }
 
@@ -417,7 +474,7 @@ body {
    left: 50%;
    transform: translate(-50%, -50%);
    width: calc(100% - 32px);
-   border-radius: 16px;
+   border-radius: 8px;
 }
 
 .map_container .leaflet-control-zoom a {
@@ -426,34 +483,29 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
-   .container > .mode {
+   .container > .top_menu {
       max-width: 740px;
+      justify-content: space-between;
+   }
+
+   .container > .top_menu > .menu_t {
+      display: block;
+      order: -1;
    }
 
    .dash {
       max-width: 740px;
-      max-height: 781px;
+      max-height: 761px;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
       gap: 16px;
       padding: 16px;
+      border-top-left-radius: 0px;
    }
 
    .dash .menu {
-      width: 100%;
-      height: 100px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-      background-color: var(--bg-tertiary);
-      border-radius: 16px;
-   }
-
-   .dash .menu ul {
-      flex-direction: row;
-      gap: 38px;
+      display: none;
    }
 
    .dash > .dash_i {
@@ -463,7 +515,8 @@ body {
       display: flex;
       flex-direction: column;
       order: -1;
-      overflow-y: hidden;
+      overflow-y: scroll;
+      scrollbar-width: none;
    }
 
    .dash .menu ul li span {
@@ -664,20 +717,6 @@ body {
 }
 
 @media screen and (max-width: 400px) {
-   .dash .menu {
-      width: 100%;
-      height: 60px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-   }
-
-   .dash .menu ul li .icon {
-      width: 34px;
-      height: 34px;
-   }
-
    .dash_rt > .weekly_weather > .weekly_info > .info img {
       max-width: 38px;
       max-height: 38px;
@@ -704,4 +743,32 @@ body {
    }
 }
 
+@media screen and (max-height:820px) {
+   .dash {
+      max-height: 721px;
+   }
+}
 
+@media screen and (max-height:770px) {
+   .dash {
+      max-height: 651px;
+   }
+}
+
+@media screen and (max-height:720px) {
+   .dash {
+      max-height: 571px;
+   }
+}
+
+@media screen and (max-height:650px) {
+   .dash {
+      max-height: 495px;
+   }
+}
+
+@media screen and (max-height:580px) {
+   .dash {
+      max-height: 465px;
+   }
+}

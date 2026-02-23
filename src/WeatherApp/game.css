@@ -7,7 +7,7 @@
    justify-content: space-between;
    align-items: center;
    background-color: #ededed;
-   border-radius: 16px;
+   border-radius: 8px;
    padding: 16px;
 }
 
@@ -81,7 +81,7 @@
    padding: 16px;
    text-align: center;
    background-color: #ededed;
-   border-radius: 16px;
+   border-radius: 8px;
 }
 
 .maze_game > .title {
@@ -102,7 +102,7 @@
 .maze_board {
    display: inline-block;
    border: 3px solid #2c3e50;
-   border-radius: 16px;
+   border-radius: 8px;
    padding: 18px;
    background: #ecf0f1;
    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -192,7 +192,7 @@
 .clear_popup {
    background: white;
    padding: 40px;
-   border-radius: 20px;
+   border-radius: 16px;
    text-align: center;
    animation: slideUp 0.3s;
 }
@@ -268,7 +268,7 @@
    font-size: 24px;
    border: 2px solid #3498db;
    background: white;
-   border-radius: 10px;
+   border-radius: 8px;
    cursor: pointer;
    transition: all 0.2s ease;
 }
@@ -291,7 +291,7 @@
    flex-direction: column;
    justify-content: space-between;
    background-color: #ededed;
-   border-radius: 16px;
+   border-radius: 8px;
 }
 
 .tictactoe_game > .title > h3 {
@@ -366,7 +366,7 @@
    margin: 0 auto;
    padding: 8px;
    background: #ecf0f1;
-   border-radius: 16px;
+   border-radius: 8px;
    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
@@ -376,7 +376,7 @@
    aspect-ratio: 1;
    background: #fff;
    border: 3px solid #bdc3c7;
-   border-radius: 16px;
+   border-radius: 8px;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -446,7 +446,7 @@
    text-align: center;
    padding: 16px;
    background-color: #ededed;
-   border-radius: 16px;
+   border-radius: 8px;
 }
 
 .number_game > .title {
@@ -492,7 +492,7 @@
 
 .number_game > .input_form > input {
    background-color: #fff;
-   border-radius: 16px;
+   border-radius: 8px;
 }
 
 @media screen and (max-width: 1200px) {

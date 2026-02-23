@@ -23,5 +23,5 @@ const modeSlice = createSlice({
    },
 });
 
-export const { toggleTheme, setTheme } = modeSlice.actions;
+export const { toggleTheme, setTheme} = modeSlice.actions;
 export default modeSlice.reducer;
