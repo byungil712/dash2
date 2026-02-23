@@ -38,6 +38,7 @@ body.dark_mode {
    padding: 0;
    margin: 0;
    box-sizing: border-box;
+   user-select: none;
 }
 
 ul {
@@ -98,7 +99,7 @@ body {
 
 .container > .mode {
    width: 100%;
-   height: 50px;
+   height: 34px;
    max-width: 1196px;
    display: flex;
    justify-content: flex-end;
@@ -188,7 +189,7 @@ body {
    transform: rotate(20deg);
 }
 
-.dash .menu ul li:first-child .icon path{
+.dash .menu ul li:first-child .icon path {
    width: 33px;
    height: 11px;
 }
@@ -282,6 +283,7 @@ body {
 .dash > .dash_i > .dash_lf > .time_weather > .times > .time {
    display: flex;
    flex-direction: column;
+   justify-content: space-between;
    align-items: center;
    background-color: #d5d5d5;
    border-radius: 16px;
@@ -430,7 +432,7 @@ body {
 
    .dash {
       max-width: 740px;
-      max-height: 841px;
+      max-height: 781px;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
@@ -699,5 +701,17 @@ body {
 
    .dash_rt > .weekly_weather h3 {
       font-size: 18px;
+   }
+}
+
+@media screen and (max-height:720px) {
+   .dash {
+      max-height: 601px;
+   }
+}
+
+@media screen and (max-height:650px) {
+   .dash {
+      max-height: 525px;
    }
 }
