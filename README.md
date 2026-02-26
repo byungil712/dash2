@@ -4,8 +4,6 @@
 - 실시간 날찌 조회 (현재 위치또는 원하는 나라를 검색또는 나라 버튼)
 - 3시간 단위의 날씨예보 대시보드 UI를 활용한 날씨앱과 간단한 미니게임
 
-## 주요 기능
-
 ### 날씨 관련
 - 실시간 날찌 조회 (현재 위치또는 원하는 나라를 검색또는 나라 버튼)
 - 3시간 단위의 날씨 예보
@@ -35,12 +33,28 @@
 dash/
 ├ public/
 │  └ img/
-│    └ cloud_moon128.png
-│    └ cloud_sun128.png
-│    └ cloud128.png
-│    └ fog128.png
-│    └ ...
-│
+│    
 ├ src/
-│  └
+│  └ WeatherApp
+│    └ App.jsx
+│    └ app.css
+│    └ mode.css
+│    └ game.css
+│    └ Component
+│      └ Box.jsx
+│      └ DashMiniGame.jsx
+│      └ DashWeather.jsx
+│      └ Map.jsx
+│      └ Number.jsx
+│      └ TicTacToe.jsx
+│      └ WeatherBox.jsx
+│      └ WeatherBox2.jsx
+│    └ Script
+│      └ gameSlice.js
+│      └ mazeSlice.js
+│      └ modeSlice.js
+│      └ numberSlice.js
+│      └ sliceSlice.js
+│      └ storeSlice.js
+│      └ ticTacToeSlice.js
 
