@@ -56,5 +56,5 @@ dash/
 │      └ numberSlice.js
 │      └ sliceSlice.js
 │      └ storeSlice.js
-│      └ ticTacToeSlice.js
+│      └ ticTacToeSlice.js1
 
