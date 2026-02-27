@@ -33,30 +33,34 @@
 - Font Awesome
 
 ## 프로젝트 구조
-dash/
-├ public/
-│  └ img/
-│    
-├ src/
-│  └ WeatherApp
-│    └ App.jsx
-│    └ app.css
-│    └ mode.css
-│    └ game.css
-│    └ Component
-│      └ Box.jsx
-│      └ DashMiniGame.jsx
-│      └ DashWeather.jsx
-│      └ Map.jsx
-│      └ Number.jsx
-│      └ TicTacToe.jsx
-│      └ WeatherBox.jsx
-│      └ WeatherBox2.jsx
-│    └ Script
-│      └ gameSlice.js
-│      └ mazeSlice.js
-│      └ modeSlice.js
-│      └ numberSlice.js
-│      └ sliceSlice.js
-│      └ storeSlice.js
-│      └ ticTacToeSlice.js1
+weather-app/
+│
+├── 📁 public/
+│   └── 📁 img/
+│       ├── weather/
+│       └── games/
+│
+├── 📁 src/
+│   ├── 📁 Component/
+│   │   ├── Box.jsx
+│   │   ├── DashMiniGame.jsx
+│   │   ├── DashWeather.jsx
+│   │   ├── Map.jsx
+│   │   ├── Number.jsx
+│   │   ├── TicTacToe.jsx
+│   │   ├── WeatherBox.jsx
+│   │   └── WeatherBox2.jsx
+│   │
+│   ├── 📁 Script/
+│   │   ├── gamesSlice.js
+│   │   ├── mazeSlice.js
+│   │   ├── modeSlice.js
+│   │   ├── numberSlice.js
+│   │   ├── sliceSlice.js
+│   │   ├── storeSlice.js
+│   │   └── ticTacToeSlice.js
+│   │
+│   ├── App.jsx
+│   ├── app.css
+│   ├── mode.css
+│   └── game.css
