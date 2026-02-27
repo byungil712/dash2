@@ -33,7 +33,7 @@
 - Font Awesome
 
 ## 프로젝트 구조
-`
+```
 weather-app/
 │
 ├── 📁 public/
@@ -65,4 +65,4 @@ weather-app/
 │   ├── app.css
 │   ├── mode.css
 │   └── game.css
-`
+```
