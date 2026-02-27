@@ -34,35 +34,38 @@
 
 ## 프로젝트 구조
 ```
-weather-app/
+dash/
 │
 ├── 📁 public/
-│   └── 📁 img/
-│       ├── weather/
-│       └── games/
-│
-├── 📁 src/
-│   ├── 📁 Component/
-│   │   ├── Box.jsx
-│   │   ├── DashMiniGame.jsx
-│   │   ├── DashWeather.jsx
-│   │   ├── Map.jsx
-│   │   ├── Number.jsx
-│   │   ├── TicTacToe.jsx
-│   │   ├── WeatherBox.jsx
-│   │   └── WeatherBox2.jsx
-│   │
-│   ├── 📁 Script/
-│   │   ├── gamesSlice.js
-│   │   ├── mazeSlice.js
-│   │   ├── modeSlice.js
-│   │   ├── numberSlice.js
-│   │   ├── sliceSlice.js
-│   │   ├── storeSlice.js
-│   │   └── ticTacToeSlice.js
-│   │
-│   ├── App.jsx
-│   ├── app.css
-│   ├── mode.css
-│   └── game.css
+│   ├── 📁 img/
+│   └── favicon.ico
+│       
+└── 📁 src/
+    ├── 📁 WeatherApp/
+    │   ├── 📁 Component/
+    │   │   ├── Box.jsx
+    │   │   ├── DashMiniGame.jsx
+    │   │   ├── DashWeather.jsx
+    │   │   ├── Map.jsx
+    │   │   ├── Maze.jsx
+    │   │   ├── Number.jsx
+    │   │   ├── TicTacToe.jsx
+    │   │   ├── WeatherBox.jsx
+    │   │   └── WeatherBox2.jsx
+    │   │
+    │   ├── 📁 Script/
+    │   │   ├── gamesSlice.js
+    │   │   ├── mazeSlice.js
+    │   │   ├── modeSlice.js
+    │   │   ├── numberSlice.js
+    │   │   ├── ticTacToeSlice.js
+    │   │   ├── slice.js
+    │   │   └── store.js
+    │   │
+    │   ├── App.jsx
+    │   ├── app.css
+    │   ├── mode.css
+    │   └── game.css
+    │
+    └── main.jsx
 ```
